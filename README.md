@@ -5,6 +5,8 @@ Run first 2 programs.  Copy fbpanel dir into .config dir.  Copy files into ./flu
 
 Copy bashrcAdd and XresourcesAdd to respective files.  Copy termite to .config
 
+Copy mpv.conf to /.config/mpv folder
+
 Change lxappearance.
 
 Add to /etc/sudoers: %sudo ALL = NOPASSWD: /sbin/shutdown, /sbin/poweroff, /sbin/halt, /sbin/reboot
