@@ -7,3 +7,4 @@ cd yay
 makepkg -si
 
 yay -S fbpanel
+yay -S numix-circle-icon-theme-git
