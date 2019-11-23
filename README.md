@@ -1,5 +1,5 @@
 # fluxbox
-
+Change sh settings: chmod +x init.sh && chmod +x getfromyay.sh && chmod +x printer.sh && chmod +x bluetooth.sh
 
 
 
