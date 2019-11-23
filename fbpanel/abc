@@ -1,0 +1,220 @@
+Global {
+    edge = left
+    allign = center
+    margin = 0
+    widthtype = percent
+    width = 86
+    height = 48
+    transparent = true
+    tintcolor = #ffffff
+    alpha = 38
+    setdocktype = true
+    setpartialstrut = true
+    autohide = true
+    heightWhenHidden = 12
+    roundcorners = true
+    roundcornersradius = 7
+    layer = none
+    MaxElemHeight = 44
+}
+
+
+
+Plugin {
+    type = space
+    config {
+        size = 2
+    }
+}
+
+Plugin {
+    type = menu
+    config {
+        IconSize = 22
+        #icon = start-here
+        icon = logo
+        systemmenu {
+        }
+        separator {
+        }
+	menu {  
+	    name = Computer
+	    icon = computer
+            
+	    item {
+		name = Terminal
+		icon = terminal
+		action = xterm
+	    }
+            item {
+                name = Lock Display
+                icon = gnome-lockscreen
+                action = slock
+            }
+            separator {
+            }
+            item {
+                name = Reboot
+                icon = gnome-session-reboot
+                action = reboot
+            }
+            item {
+                name = Shutdown
+                icon = gnome-session-halt
+                action = shutdown -h now
+            }
+            item {
+                name = logout
+                icon = gnome-session-logout
+                action = /usr/lib/fbpanel/xlogout
+            }
+        }
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 20
+    }
+}
+
+
+Plugin {
+    type = launchbar
+    config {
+        button {
+            icon = file-manager
+            tooltip = File Manager
+            action = pcmanfm
+        }
+        button {
+            icon = lxterminal
+            tooltip = Terminal
+            action = xterm
+        }
+	button {
+            icon = web-browser
+            tooltip = Web Browser
+            action = firefox
+    	}
+    
+    button {
+            icon = lxterminal
+            tooltip = termite
+            action = termite
+    	}
+    button {
+            icon = chrome
+            tooltip = NetSurf
+            action = netsurf
+    	}
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 20
+    }
+}
+
+
+Plugin {
+    type = wincmd
+    config {
+        icon = gnome-fs-desktop
+        tooltip = Left click to iconify all windows. Middle click to shade them.
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 15
+    }
+}
+
+
+
+Plugin {
+    type = taskbar
+    expand = true
+    config {
+        ShowIconified = true
+        ShowMapped    = true
+        ShowAllDesks  = false
+        tooltips = true
+        IconsOnly = false
+        MaxTaskWidth = 150
+    }
+}
+
+
+Plugin {
+    type = space
+	config {
+	   size = 15
+	}
+}
+
+Plugin {
+    type = pager
+    config {
+        showwallpaper = false
+    }
+}
+
+Plugin {
+    type = space
+    config {
+        size = 10
+    }
+}
+
+Plugin {
+    type = mem
+    expand = false
+    padding = 2
+    config {
+        ShowSwap = false
+    }
+}
+
+
+
+#Plugin {
+   #type = cpu
+   #config {
+    #   Color = green
+    #}
+#}
+
+#Plugin {
+#    type = net
+#    expand = false
+#    padding = 0
+ #   config {
+        #interface = ppp0
+ #       interface = eth0
+        # set connection limits to make traffic graph more accurate
+  #      TxLimit = 20
+  #      RxLimit = 190
+  #      TxColor = violet
+  #     RxColor = blue
+#    }
+#}
+
+
+
+
+# Digital Clock
+Plugin {
+    type = dclock
+    config {
+        ShowSeconds = false
+        HoursView = 24
+        TooltipFmt = %A %x
+        #Action = xmessage Please define some command &
+    }
+}
