@@ -1,0 +1,44 @@
+background yes
+double_buffer yes
+alignment none
+total_run_times 0
+temperature_unit celsius
+text_buffer_size 2048
+override_utf8_locale yes
+border_width 0
+cpu_avg_samples 2
+default_color white 
+default_outline_color white 
+default_shade_color white 
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 5
+gap_y 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_type Normal
+own_window_transparent no
+own_window_argb_visual yes
+own_window_argb_value 200
+own_window_colour 252932
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+stippled_borders 0
+minimum_size 140 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+use_xft yes
+xftalpha 0.1
+xftfont Sans:bold:size=9
+color0 00bfff	
+color1 dddddd
+TEXT
+${alignr}${voffset 5}${color1}$cpu%CPU  ${alignr}${voffset 0}${color0}${mem}    

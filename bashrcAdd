@@ -1,0 +1,8 @@
+#
+# ~/.bashrc
+#
+alias w3='w3m duckduckgo.com'
+
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# neofetch
