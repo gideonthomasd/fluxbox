@@ -8,3 +8,4 @@ makepkg -si
 
 yay -S fbpanel
 yay -S numix-circle-icon-theme-git
+yay -S oranchelo-icon-theme
