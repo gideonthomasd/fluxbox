@@ -1,0 +1,36 @@
+[submenu] (Applications)
+ [submenu] (Accessories)
+     [exec] (Plank) {plank} </usr/share/icons/hicolor/16x16/apps/plank.svg>
+     [exec] (Vim) {xterm -e vim } </usr/share/icons/hicolor/48x48/apps/gvim.png>
+     [exec] (Xarchiver) {xarchiver } </usr/share/icons/hicolor/16x16/apps/xarchiver.png>
+     [exec] (compton) {compton} </usr/share/icons/hicolor/48x48/apps/compton.png>
+     [exec] (nitrogen) {nitrogen} </usr/share/icons/hicolor/16x16/apps/nitrogen.png>
+     [exec] (picom) {picom} <->
+ [end] # (Accessories)
+ [submenu] (Internet)
+     [exec] (Avahi SSH Server Browser) {/usr/bin/bssh} <->
+     [exec] (Avahi VNC Server Browser) {/usr/bin/bvnc} <->
+     [exec] (Firefox) {/usr/lib/firefox/firefox } </usr/share/icons/hicolor/16x16/apps/firefox.png>
+ [end] # (Internet)
+ [submenu] (Programming)
+     [exec] (Geany) {geany } </usr/share/icons/hicolor/16x16/apps/geany.png>
+ [end] # (Programming)
+ [submenu] (Sound & Video)
+     [exec] (PulseAudio Volume Control) {pavucontrol} <->
+     [exec] (Qt V4L2 test Utility) {qv4l2} </usr/share/icons/hicolor/16x16/apps/qv4l2.png>
+     [exec] (Qt V4L2 video capture utility) {qvidcap} </usr/share/icons/hicolor/16x16/apps/qvidcap.png>
+     [exec] (Volume Icon) {volumeicon} <->
+ [end] # (Sound & Video)
+ [submenu] (System Tools)
+     [exec] (Avahi Zeroconf Browser) {/usr/bin/avahi-discover} <->
+     [exec] (Bulk Rename) {/usr/lib/Thunar/ThunarBulkRename } </usr/share/icons/hicolor/16x16/apps/Thunar.png>
+     [exec] (Cairo-Dock) {cairo-dock} </usr/share/pixmaps/cairo-dock.svg>
+     [exec] (Cairo-Dock (Fallback Mode)) {cairo-dock -A} </usr/share/pixmaps/cairo-dock.svg>
+     [exec] (File Manager PCManFM) {pcmanfm } <->
+     [exec] (Task Manager) {lxtask} <->
+     [exec] (Termite) {termite} <->
+     [exec] (Thunar File Manager) {thunar } </usr/share/icons/hicolor/16x16/apps/Thunar.png>
+     [exec] (UXTerm) {uxterm} </usr/share/pixmaps/xterm-color_48x48.xpm>
+     [exec] (XTerm) {xterm} </usr/share/pixmaps/xterm-color_48x48.xpm>
+ [end] # (System Tools)
+[end] # (Applications)

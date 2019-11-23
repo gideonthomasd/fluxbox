@@ -1,0 +1,3 @@
+$ xdg_menu --format fluxbox  --root-menu /etc/xdg/menus/arch-applications.menu >~/.fluxbox/my-menu
+then include in menu:
+[include] (my-menu)
