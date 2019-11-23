@@ -1,0 +1,21 @@
+/* XPM */
+static char *shadefcs_custom[] = {
+/* columns rows colors chars-per-pixel */
+"8 8 7 1",
+"  c #EFD5BD3C2CF9",
+". c #EC5EAEEE369C",
+"X c #EB37AA2939D3",
+"o c #ED86B3B33366",
+"O c #EEADB8773030",
+"+ c #F0FCC20129C3",
+"@ c None",
+/* pixels */
+"@@@@@@@@",
+"@@@++@@@",
+"@@    @@",
+"@OOOOOO@",
+"oooooooo",
+"........",
+"@XXXXXX@",
+"@@@@@@@@"
+};

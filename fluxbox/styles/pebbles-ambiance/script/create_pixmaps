@@ -1,0 +1,34 @@
+#!/bin/sh
+# This script will put the buttons on the bottom of the titlebar.
+# The "stick" button
+STUCK_normal="stuckfcs_custom.xpm"
+STUCK_unfocus="stuckufcs_custom.xpm"
+composite -gravity south button_border.png ../pixmaps/titlefcs.xpm ../pixmaps/button_border.xpm
+composite -gravity south -geometry +0+2 $STUCK_normal ../pixmaps/button_border.xpm ../pixmaps/stuckfcs.xpm
+composite -gravity south -geometry +0+2 $STUCK_normal ../pixmaps/button_border.xpm ../pixmaps/stickpr.xpm
+composite -gravity south -geometry +0+2 $STUCK_unfocus ../pixmaps/button_border.xpm ../pixmaps/stuckufcs.xpm
+composite -gravity south closefcs_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closefcs.xpm
+composite -gravity south -geometry +0+2 maxfcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxfcs.xpm
+composite -gravity south -geometry +0+2 shadefcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadefcs.xpm
+composite -gravity south -geometry +0+2 unshadefcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadefcs.xpm
+composite -gravity south closeufcs_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closeufcs.xpm
+composite -gravity south -geometry +0+2 maxufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxufcs.xpm
+composite -gravity  south -geometry +0+2 shadeufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadeufcs.xpm
+composite -gravity south -geometry +0+2 unshadeufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadeufcs.xpm
+composite -gravity south closepr_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closepr.xpm
+composite -gravity south -geometry +0+2 maxpr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxpr.xpm
+composite -gravity south -geometry +0+2 shadepr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadepr.xpm
+composite -gravity south -geometry +0+2 unshadepr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadepr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/menu_title.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minpr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stickfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stickufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stuckpr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/tbarfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/tbarufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/titleufcs.xpm
+echo Done. Everything ok.
+exit
+

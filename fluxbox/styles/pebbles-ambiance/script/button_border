@@ -1,0 +1,15 @@
+#!/bin/bash
+# The colour of the outer border on the buttons.
+# In most cases this should be the colour of window.borderColor.
+OUTER_BORDER="#3c3b37"
+convert transparent.png -fill $OUTER_BORDER -draw "line 0,0 0,12" button_border.png
+mogrify -fill $OUTER_BORDER -draw "line 0,11 12,11" button_border.png
+mogrify -fill $OUTER_BORDER -draw "line 11,0 11,12" button_border.png
+mogrify -fill $OUTER_BORDER -draw "line 0,0 12,0" button_border.png
+# Now drawing the inner border.
+mogrify -fill "#fffff0" -draw "line 1,1 1,10" button_border.png
+mogrify -fill "#fffff0" -draw "line 1,10 10,10" button_border.png
+mogrify -fill "#fffff0" -draw "line 1,1 10,1" button_border.png
+mogrify -fill "#fffff0" -draw "line 10,1 10,10" button_border.png
+exit
+
