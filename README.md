@@ -3,9 +3,9 @@ Change sh settings: chmod +x init.sh && chmod +x getfromyay.sh && chmod +x print
 
 Run first 2 programs.  Copy fbpanel dir into .config dir.  Copy files into ./fluxbox
 
+Copy bashrcAdd and XresourcesAdd to respective files.  Copy termite to .config
 
-
-
+Change lxappearance.
 
 Add to /etc/sudoers: %sudo ALL = NOPASSWD: /sbin/shutdown, /sbin/poweroff, /sbin/halt, /sbin/reboot
 
