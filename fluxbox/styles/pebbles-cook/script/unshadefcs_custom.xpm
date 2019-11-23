@@ -1,0 +1,21 @@
+/* XPM */
+static char *unshadefcs_custom[] = {
+/* columns rows colors chars-per-pixel */
+"8 8 7 1",
+"  c #EC5EAEEE369C",
+". c #EA0FA5643D09",
+"X c #EB37AA2939D3",
+"o c #ED86B3B33366",
+"O c #EEADB8773030",
+"+ c #E8E8A0A04040",
+"@ c None",
+/* pixels */
+"@@@@@@@@",
+"@OOOOOO@",
+"oooooooo",
+"        ",
+"@XXXXXX@",
+"@@....@@",
+"@@@++@@@",
+"@@@@@@@@"
+};

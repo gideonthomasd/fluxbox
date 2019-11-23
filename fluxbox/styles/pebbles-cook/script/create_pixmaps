@@ -1,0 +1,34 @@
+#!/bin/sh
+# This script will put the buttons vertically centered on the titlebar.
+# The "stick" button
+STUCK_normal="stuckfcs_custom.xpm"
+STUCK_unfocus="stuckufcs_custom.xpm"
+composite -gravity center button_border.png ../pixmaps/titlefcs.xpm ../pixmaps/button_border.xpm
+composite -gravity center $STUCK_normal ../pixmaps/button_border.xpm ../pixmaps/stuckfcs.xpm
+composite -gravity center $STUCK_normal ../pixmaps/button_border.xpm ../pixmaps/stickpr.xpm
+composite -gravity center $STUCK_unfocus ../pixmaps/button_border.xpm ../pixmaps/stuckufcs.xpm
+composite -gravity center closefcs_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closefcs.xpm
+composite -gravity center maxfcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxfcs.xpm
+composite -gravity center shadefcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadefcs.xpm
+composite -gravity center unshadefcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadefcs.xpm
+composite -gravity center closeufcs_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closeufcs.xpm
+composite -gravity center maxufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxufcs.xpm
+composite -gravity center shadeufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadeufcs.xpm
+composite -gravity center unshadeufcs_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadeufcs.xpm
+composite -gravity center closepr_custom.xpm ../pixmaps/titlefcs.xpm ../pixmaps/closepr.xpm
+composite -gravity center maxpr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/maxpr.xpm
+composite -gravity center shadepr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/shadepr.xpm
+composite -gravity center unshadepr_custom.xpm ../pixmaps/button_border.xpm ../pixmaps/unshadepr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/menu_title.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minpr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/minufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stickfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stickufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/stuckpr.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/tbarfcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/tbarufcs.xpm
+cp -f ../pixmaps/titlefcs.xpm ../pixmaps/titleufcs.xpm
+echo Done. Everything ok.
+exit
+

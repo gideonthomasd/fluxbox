@@ -1,0 +1,23 @@
+/* XPM */
+static char *maxfcs_custom[] = {
+/* columns rows colors chars-per-pixel */
+"8 8 9 1",
+"  c #EFD5BD3C2CF9",
+". c #EC5EAEEE369C",
+"X c #EA0FA5643D09",
+"o c #EB37AA2939D3",
+"O c #ED86B3B33366",
+"+ c #EEADB8773030",
+"@ c #F0FCC20129C3",
+"# c #E8E8A0A04040",
+"$ c None",
+/* pixels */
+"$$$@@$$$",
+"$$    $$",
+"$++++++$",
+"OOOOOOOO",
+"........",
+"$oooooo$",
+"$$XXXX$$",
+"$$$##$$$"
+};
