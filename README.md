@@ -1,6 +1,8 @@
 # fluxbox
 Change sh settings: chmod +x init.sh && chmod +x getfromyay.sh && chmod +x printer.sh && chmod +x bluetooth.sh
 
+Run first 2 programs.  Copy fbpanel dir into .config dir.  Copy files into ./fluxbox
+
 
 
 
