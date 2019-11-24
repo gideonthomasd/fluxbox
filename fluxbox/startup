@@ -14,7 +14,8 @@ xmodmap "/home/phil/.Xmodmap"
 # wmnd &
 # wmsmixer -w &
 # idesk &
-xrandr --output Virtual1 --mode 1680x1050 &
+
+###############xrandr --output Virtual1 --mode 1680x1050 &
 lxpolkit &
 nitrogen --restore &
 #./fehbg.sh &
