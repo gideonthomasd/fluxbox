@@ -1,0 +1,5 @@
+In termite do:
+mmaker fluxbox -c
+Copy this my-menu
+[include] (my-menu) 
+ - in menu file
