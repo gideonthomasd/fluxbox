@@ -12,3 +12,5 @@ Change lxappearance.
 Add to /etc/sudoers: %sudo ALL = NOPASSWD: /sbin/shutdown, /sbin/poweroff, /sbin/halt, /sbin/reboot
 
 This enables reboot and shutdown in menu (no sudo necessary)
+
+Change wmckgmail to .wmckgmail in home/phil  In terminal do wmckgmail & then disown
