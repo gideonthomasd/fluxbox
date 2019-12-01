@@ -13,4 +13,6 @@ Add to /etc/sudoers: %sudo ALL = NOPASSWD: /sbin/shutdown, /sbin/poweroff, /sbin
 
 This enables reboot and shutdown in menu (no sudo necessary)
 
-Change wmckgmail to .wmckgmail in home/phil  In terminal do wmckgmail & then disown
+copy wmtext-3 to /home/phil - make sure sh files are executable
+
+(Change wmckgmail to .wmckgmail in home/phil  In terminal do wmckgmail & then disown) - not needed see above
