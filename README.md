@@ -18,3 +18,4 @@ copy wmtext-3 to /home/phil - make sure sh files are executable
 (Change wmckgmail to .wmckgmail in home/phil  In terminal do wmckgmail & then disown) - not needed see above
 
 Change createbbdockrc to exec.  Run to create bbdock.
+jgmenu.sh change to exec
