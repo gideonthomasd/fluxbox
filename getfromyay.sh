@@ -10,3 +10,4 @@ yay -S fbpanel
 yay -S numix-circle-icon-theme-git
 yay -S oranchelo-icon-theme
 yay -S wmckgmail
+yat -S bbdock
