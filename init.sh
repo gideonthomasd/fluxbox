@@ -13,7 +13,7 @@ sudo pacman -S pavucontrol pulseaudio lxterminal
 sudo pacman -S gmrun termite ntfs-3g slock archlinux-xdg-menu
 sudo pacman -S neofetch rofi oblogout gtk2-perl lsb-release
 sudo pacman -S adapta-gtk-theme gvfs pdfmixtool xpdf netsurf
-sudo pacman -S virtualbox-guest-utils deadbeef unzip wget jgmenu
+sudo pacman -S virtualbox-guest-utils deadbeef unzip wget jgmenu orage
 sudo systemctl start NetworkManager
 sudo systemctl enable NetworkManager
 sudo systemctl enable lightdm
