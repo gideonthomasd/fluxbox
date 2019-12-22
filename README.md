@@ -19,4 +19,4 @@ copy wmtext-3 to /home/phil - make sure sh files are executable
 
 Change createbbdockrc to exec.  Run to create bbdock.
 jgmenu.sh change to exec
-In wmtext-3 do 'sudo install make' to put into /usr/bin/local
+In wmtext-3 do 'sudo make install' to put into /usr/bin/local
