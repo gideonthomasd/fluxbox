@@ -11,3 +11,4 @@ yay -S numix-circle-icon-theme-git
 yay -S oranchelo-icon-theme
 yay -S wmckgmail
 yay -S bbdock
+yay -S libdockapp
