@@ -1,7 +1,7 @@
 # fluxbox
 Change sh settings: chmod +x init.sh && chmod +x getfromyay.sh && chmod +x printer.sh && chmod +x bluetooth.sh
 
-Run first 2 programs.  Copy fbpanel dir into .config dir.  Copy files into ./fluxbox
+Run first 2 programs.  (Copy fbpanel dir into .config dir.)  Copy files into ./fluxbox
 
 Copy bashrcAdd and XresourcesAdd to respective files.  Copy termite to .config
 
@@ -24,3 +24,4 @@ jgmenu.sh change to exec
 In termite do mmaker -c.  Cut and paste into mymenu. In menu do [include] (~/.fluxbox/mymenu)
 
 In /etc/oblogout.conf change logout to killall fluxbox
+In archlabs remove .xprofile or change to .xprofileOLD
