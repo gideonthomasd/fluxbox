@@ -22,3 +22,5 @@ jgmenu.sh change to exec
 (In wmtext-3 do 'sudo make install' to put into /usr/bin/local)
 
 In termite do mmaker -c.  Cut and paste into mymenu. In menu do [include] (~/.fluxbox/mymenu)
+
+In /etc/oblogout.conf change logout to killall fluxbox
