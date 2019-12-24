@@ -20,7 +20,11 @@ cp wmtext-3 ~/wmtext-3
 cp createbbdockrc.sh ~/createbbdockrc.sh
 cp jgmenu.sh ~/jgmenu.sh
 
+cp myicons1 ~/myicons1
+cp myicons2 ~/myicons2
+cp myicons3 ~/myicons3
+cp myicons4 ~/myicons4
+cp myicons5 ~/myicons5
+cp myicons6 ~/myicons6
+
 createbbdockrc.sh
-
-
-
