@@ -1,7 +1,26 @@
 chmod +x init.sh
 chmod +x getfromyay.sh
+chmod +x printer.sh 
+chmod +x bluetooth.sh
+chmod +x /wmtext-3/mail
+chmod +x /wmtext-3/wmtext
+chmod +x /wmtext-3/scripts/memory.sh
+chmod +x /wmtext-3/scripts/date.sh
+chmod +x createbbdockrc.sh
+chmod +x jgmenu.sh
+
+./init.sh
+./getfromyay.sh
+
 mv ~/.fluxbox ~/fluxboxOLD
 cp fluxbox ~/.fluxbox
 cp fbpanel ~/.config/fbpanel
 cp mpv.conf ~/.config/mpv/mpv.conf
+cp wmtext-3 ~/wmtext-3
+cp createbbdockrc.sh ~/createbbdockrc.sh
+cp jgmenu.sh ~/jgmenu.sh
+
+createbbdockrc.sh
+
+
 
