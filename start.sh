@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 chmod +x init.sh
 chmod +x getfromyay.sh
 chmod +x printer.sh 
