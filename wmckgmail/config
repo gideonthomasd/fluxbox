@@ -1,4 +1,4 @@
 uname phil
 pass r
 pollinterval = 600
-browsercmd1 sylpheed &
+browsercmd1 firefox www.gmail.com &
