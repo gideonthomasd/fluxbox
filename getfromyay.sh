@@ -4,11 +4,11 @@ set -e
 sudo pacman -Syyu --noconfirm 
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 
-yay -S fbpanel
-yay -S numix-circle-icon-theme-git
-yay -S oranchelo-icon-theme
-yay -S wmckgmail
-yay -S bbdock
-yay -S libdockapp
+yay -S --noconfirm fbpanel
+yay -S --noconfirm numix-circle-icon-theme-git
+yay -S --noconfirm oranchelo-icon-theme
+yay -S --noconfirm wmckgmail
+yay -S --noconfirm bbdock
+yay -S --noconfirm libdockapp
