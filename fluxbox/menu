@@ -63,7 +63,7 @@
       		[restart] (○ Restart)
       		[exec] (○ About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
       		[nop]
-      		[exit] (○ Exit)
+      		[exec] (○ Exit) {oblogout}
 	[end]
 [endencoding]
 [end]
