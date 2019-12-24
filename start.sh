@@ -20,6 +20,7 @@ cp wmtext-3 ~/wmtext-3
 cp createbbdockrc.sh ~/createbbdockrc.sh
 cp jgmenu.sh ~/jgmenu.sh
 cp wmckgmail ~/.wmckgmail 
+cp backgrounds ~/backgrounds
 
 cp myicons1 ~/myicons1
 cp myicons2 ~/myicons2
