@@ -17,10 +17,10 @@ session.screen0.iconbar.mode:	{static groups}
 session.screen0.iconbar.iconWidth:	128
 session.screen0.iconbar.iconTextPadding:	10
 session.screen0.iconbar.alignment:	Relative
-session.screen0.slit.placement:	BottomCenter
+session.screen0.slit.placement:	LeftCenter
 session.screen0.slit.layer:	Top
 session.screen0.slit.acceptKdeDockapps:	true
-session.screen0.slit.autoHide:	true
+session.screen0.slit.autoHide:	false
 session.screen0.slit.onhead:	0
 session.screen0.slit.maxOver:	true
 session.screen0.slit.alpha:	255
