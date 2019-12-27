@@ -52,7 +52,7 @@ session.screen0.maxDisableResize:	false
 session.screen0.autoRaise:	true
 session.screen0.workspaceNames:	Workspace 1,Workspace 2,Workspace 3,Workspace 4,
 session.screen0.noFocusWhileTypingDelay:	0
-session.screen0.windowMenu:	/home/phil/.fluxbox/windowmenu
+session.screen0.windowMenu:	~/.fluxbox/windowmenu
 session.screen0.workspaces:	4
 session.screen0.maxDisableMove:	false
 session.screen0.rowPlacementDirection:	LeftToRight
@@ -64,13 +64,13 @@ session.ignoreBorder:	false
 session.autoRaiseDelay:	250
 session.cacheMax:	200
 session.forcePseudoTransparency:	false
-session.styleOverlay:	/home/phil/.fluxbox/overlay
-session.slitlistFile:	/home/phil/.fluxbox/slitlist
+session.styleOverlay:	~/.fluxbox/overlay
+session.slitlistFile:	~/.fluxbox/slitlist
 session.colorsPerChannel:	4
-session.styleFile:	/home/phil/.fluxbox/styles/05-Crunchy-green_SQ
+session.styleFile:	~/.fluxbox/styles/05-Crunchy-green_SQ
 session.tabPadding:	0
 session.menuFile:	~/.fluxbox/menu
 session.cacheLife:	5
 session.tabsAttachArea:	Window
-session.appsFile:	/home/phil/.fluxbox/apps
+session.appsFile:	~/.fluxbox/apps
 session.configVersion:	13
