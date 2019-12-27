@@ -35,3 +35,4 @@ cp -r myicons6 ~/myicons6
 
 ./createbbdockrc.sh
 sudo cp oblogout.conf /etc/oblogout.conf
+mv ~/.xprofile ~/.xprofileOLD
