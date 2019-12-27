@@ -34,3 +34,4 @@ cp -r myicons5 ~/myicons5
 cp -r myicons6 ~/myicons6
 
 ./createbbdockrc.sh
+sudo cp oblogout.conf /etc/oblogout.conf
