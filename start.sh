@@ -5,10 +5,10 @@ chmod +x init.sh
 chmod +x getfromyay.sh
 chmod +x printer.sh 
 chmod +x bluetooth.sh
-chmod +x ~/Downloads/fluxbox/wmtext-3/mail
-chmod +x ~/Downloads/fluxbox/wmtext-3/wmtext
-chmod +x ~/Downloads/fluxbox/wmtext-3/scripts/memory.sh
-chmod +x ~/Downloads/fluxbox/wmtext-3/scripts/date.sh
+chmod +x ~/fluxbox/wmtext-3/mail
+chmod +x ~/fluxbox/wmtext-3/wmtext
+chmod +x ~/fluxbox/wmtext-3/scripts/memory.sh
+chmod +x ~/fluxbox/wmtext-3/scripts/date.sh
 chmod +x createbbdockrc.sh
 chmod +x jgmenu.sh
 
