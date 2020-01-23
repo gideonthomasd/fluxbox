@@ -6,6 +6,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 
+yay -S --noconfirm oblogout
 yay -S --noconfirm fbpanel
 yay -S --noconfirm numix-circle-icon-theme-git
 yay -S --noconfirm oranchelo-icon-theme
