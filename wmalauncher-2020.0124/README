@@ -1,0 +1,328 @@
+
+
+                            _                        _ 
+                           | |                      | |
+  __      ___ __ ___   __ _| | __ _ _   _ _ __   ___| |__   ___ _ __
+  \ \ /\ / / '_ ` _ \ / _` | |/ _` | | | | '_ \ / __| '_ \ / _ \ '__|
+   \ V  V /| | | | | | (_| | | (_| | |_| | | | | (__| | | |  __/ |
+    \_/\_/ |_| |_| |_|\__,_|_|\__,_|\__,_|_| |_|\___|_| |_|\___|_|
+
+
+
+About
+-----
+
+wmalauncher is an easy to use and highly configurable application launcher
+dockapp especially designed for fluxbox but which also works well under
+blackbox, openbox, windowmaker.
+
+wmalauncher supports XPM, PNG, SVG icons, .desktop files, true-type 
+fonts (for tooltip text), allows to configure, among others, the background
+color, the border size, the brightness/contrast/gamma of icon, allows to
+draw a frame around the button, etc...
+
+Requirements
+------------
+ Make sure installed first**********************
+    * cmake 
+    * imlib2
+    * librsvg
+
+Installation
+------------
+
+To compile wmalauncher with default settings and install it in /usr/bin, 
+simply run the following commands :
+
+  8<--------------------------------------------------------------------
+    $ #mkdir _build
+    $ #cd _build 
+    Run in directory***********************88
+    $ cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release ..
+    $ make
+    $ sudo make install [Altered]
+  8<--------------------------------------------------------------------
+ 
+By default, wmalauncher :
+
+  * is configured to search for fonts in the following paths :
+ 
+      + ~/.fonts
+      + /usr/share/fonts/TTF
+      + /usr/share/fonts/truetype
+      + /usr/share/fonts/truetype/dejavu
+      + /usr/share/fonts/truetype/liberation
+      + /usr/share/fonts/dejavu
+      + /usr/share/fonts/liberation
+     
+     
+  * is configured to search for icons in the following paths :
+ 
+      + ~/.icons
+      + /usr/share/icons/Adwaita/scalable
+      + /usr/share/icons/Adwaita/48x48
+      + /usr/share/icons/hicolor/scalable
+      + /usr/share/icons/hicolor/48x48
+      + /usr/share/pixmaps
+     
+     
+  * assumes that any path given in argument of option --icon-search-path
+    which is not absolute is relative to the root path: /usr/share/icons
+    
+  * is configured to use the precedence order of icon types below :
+     + svgz
+     + svg
+     + png
+     + xpm
+
+    This list is used to select the (best) icon when the icon name 
+    specified in arguments (or defined in a .desktop  file) is a 
+    simple name without an extension.
+
+
+  * is configured to search for *.desktop* files in the following paths :
+ 
+      + ~/.local/share/applications
+      + /usr/share/applications
+
+     
+  * use the first available terminal emulator in the list below when a 
+    command/application must be run in a terminal window :
+
+      + /usr/bin/xterm
+      + /usr/bin/rxvt
+      + /usr/bin/xfce4-terminal
+      + /usr/bin/konsole
+
+
+  * use the first available font in the list below when the font passed 
+    in arguments of option --tooltip-font is not available :
+ 
+      + DejaVuSans/11
+      + LiberationSans-Regular/11
+      + luxisr/11
+
+
+All of these default settings can be changed using the cmake variables 
+below : 
+
+      + DEFAULT_FONT_SEARCH_PATH
+      + DEFAULT_ICON_SEARCH_PATH
+      + MAIN_ROOT_ICON_SEARCH_PATH
+      + DEFAULT_PREFERRED_ICON_TYPES
+      + DEFAULT_DESKTOP_FILE_SEARCH_PATH
+      + DEFAULT_FALLBACK_FONTS
+      + DEFAULT_PREFERRED_TERMINALS
+  
+Furthermore, Native Language Support (NLS) can be disabled by passing 
+-DENABLE_NLS=OFF to cmake.
+
+  
+Installation on FreeBSD
+-----------------------
+
+1. To build wmalauncher on FreeBSD, LDFLAGS="-L/usr/local/lib" must be
+   set prior to execute cmake.
+   
+2. On FreeBSD, resources like fonts, icons, .desktop file are accessibles
+   from the directory hierarchy /usr/local/share while it is /usr/share 
+   on Linux, and, 3rd party binaries are stored in /usr/local/bin while
+   it is /usr/bin on Linux. 
+   
+   By default, CMakeLists.txt defines /usr/share and /usr/bin as being
+   the directories from which resources and binaries are accessibles. 
+   
+   These (default) default settings can be modified through the variables 
+   SYSRES_ROOTDIR and SYSBIN_DIR.
+   
+Therefore, the easiest way to compile and install wmalauncher on FreeBSD
+is to run cmake like as below :
+
+  8<--------------------------------------------------------------------
+    $ mkdir _build
+    $ cd _build
+    
+    $ LDFLAGS="-L/usr/local/lib" \
+      cmake -DSYSRES_ROOTDIR=/usr/local/share \
+            -DSYSBIN_DIR=/usr/local/bin \
+	    -DCMAKE_BUILD_TYPE=Release ..
+  
+    $ make
+    $ make install
+  8<--------------------------------------------------------------------
+
+
+Usage
+-----
+
+There are three ways to create a launcher for a given application with 
+wmalauncher:
+
+  1. Pass the command to execute and the icon to display on the command 
+     line, like as in example below :
+
+     8<------------------------------------------------------------------    
+         $ wmalauncher --command /usr/bin/firefox --icon firefox.png &
+     8<------------------------------------------------------------------
+    
+     In the example above, wmalauncher will use the first icon found in the
+     "icon search paths" that match firefox.png (note: the extension can be
+     omitted).
+
+
+  2. Pass the .desktop file of the target application on the command line :
+
+     8<------------------------------------------------------------------
+        $ wmalauncher --desktop-file mozilla-firefox.desktop:firefox.desktop &
+     8<------------------------------------------------------------------
+    
+     In the example above, wmalauncher will use the first .desktop file 
+     found in the "desktop file search path" that match mozilla-firefox.desktop
+     or firefox.desktop (note: the extensions can be omitted).
+
+
+  3. Pass a configuration file containing the settings for the target 
+     application on the command line  :
+    
+     8<------------------------------------------------------------------
+        $ wmalauncher --config /usr/share/wmalauncher/lighting.conf \
+		      --prefix mozilla-firefox &
+     8<------------------------------------------------------------------
+		  
+    In the example above, wmalauncher loads the settings from the configuration
+    file /usr/share/wmalauncher/lighting.conf, then, configures the command, 
+    icon and tooltip-text according to the settings dedicated to the application
+    firefox.
+        
+    For more about wmalauncher configuration files, see the section 
+    "CONFIGURATION FILE FORMAT" in the man page.
+
+    wmalauncher comes with the following pre-defined configuration files :
+    
+      + /usr/share/wmalauncher/lighting.conf
+      + /usr/share/wmalauncher/multi-effects.conf
+      + /usr/share/wmalauncher/old-school.conf
+      + /usr/share/wmalauncher/frame-onthefly.conf
+      + /usr/share/wmalauncher/wmaker-style.conf
+      
+    Each of the predefined configuration files includes a global section 
+    for visual settings, and entries for the following applications :
+
+    
+      Development
+      ===========
+      
+        gvim                emacs                geany
+
+
+      Games
+      =====
+
+        darkplaces          dhewm3               gzdoom
+        ioquake3            iortcw               quake2
+        xboard              
+
+	
+      Graphics
+      ========
+      
+        geeqie              gimp                 gwenview
+        krita               libreoffice-draw     xsane
+
+	
+      Internet
+      ========
+      
+        mozilla-firefox     google-chrome        seamonkey
+        mozilla-thunderbird pan                  pidgin
+        transmission-gtk    transmission-qt      gftp
+
+	
+      Multimedia
+      ==========
+
+        amarok              audacious            kplayer
+        mplayer             xine                 xmms
+        pavucontrol         k3b                  
+
+
+      Office
+      ======
+
+        libreoffice-base    libreoffice-calc         libreoffice-impress
+        libreoffice-math    libreoffice-startcenter  libreoffice-writer
+        qpdfview            okular                   scribus
+        xpdf
+
+
+      System
+      ======
+      
+        dolphin             thunar                   xfe
+        xfce4-terminal      uxterm                   konsole
+        xterm               virtualbox               htop
+        ksysguard           xfce4-taskmanager        grsync
+
+
+      Utilities
+      =========
+
+        leafpad             kate                     kwrite
+        gucharmap           xarchiver                xfce4-screenshooter
+        galculator          kcalc
+
+
+Troubleshooting
+---------------
+
+In case of issue with wmalauncher, rebuild it with debug informations
+by passing -DCMAKE_BUILD_TYPE=Debug (or RelWithDebInfo) to cmake, re-run 
+wmalauncher to reproduce the issue, then send the system configuration 
+in use, the output of wmalauncher, the back/stack trace (if any), and any 
+other informations that could be useful to solve the issue, at  :
+
+  <slacker6896@gmail.com>
+
+
+Known issues
+------------
+
+  1. wmalauncher might hang when running in an ssh session, which is 
+     caused by an imlib2 issue (https://phab.enlightenment.org/T7173).
+
+     To circumvent this :
+
+       + upgrade xorg-server to version >= 1.20.1
+       + export IMLIB2_SHM_OPT=1
+       + rebuild imlib2 with --without-x-shm-fd
+       + downgrade imlib2 to 1.4.x
+
+
+Translation
+-----------
+
+At the moment, wmalauncher manual page and messages (including help page), 
+are only translated in french.
+
+Anybody who wants to contribute to translation (or even correction) is 
+welcome and can contact me at <slacker6896@gmail.com>.
+
+
+Authors
+-------
+
+  + Sébastien Ballet <slacker6896@gmail.com>
+
+
+License
+-------
+
+The source code of this program is governed by the BSD 3-clause license 
+that can be found in the LICENSE file. 
+
+
+Credits
+-------
+
+wmalauncher logo was generated on patorjk.com/software/taag using font
+Doom.

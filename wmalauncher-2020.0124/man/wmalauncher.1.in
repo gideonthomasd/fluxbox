@@ -1,0 +1,614 @@
+.\" 
+.\" Man page for wmalauncher 2020.0124
+.\" 
+
+
+.TH WMALAUNCHER 1 "January 2020" "Version 2020.0124"
+.SH NAME
+wmalauncher \- A dockapp application launcher.
+.SH SYNOPSIS
+\fBwmalauncher\fR \fB--help\fR
+.br
+\fBwmalauncher\fR \fB--fonts-info\fR [<\fIPATH\fR>[:<\fIPATH\fR>...]]
+.br
+\fBwmalauncher\fR \fB--config\fR <\fIFILE\fR> [--prefix <\fIPREFIX\fR>] [OPTION]...
+.br
+\fBwmalauncher\fR \fB--command\fR <\fICMD\fR> \fB--icon\fR <\fIICON\fR> [OPTION]...
+.br
+\fBwmalauncher\fR \fB--desktop-file\fR <\fIFILE\fR>[:<\fIFILE\fR>...] [OPTION]...
+
+[OPTION] can be :
+
+  [\fB--run-in-terminal\fR] [\fB--preferred-terminals\fR <\fITERM\fR>[:<\fITERM\fR>...]]
+  [\fB--window-size\fR <\fISIZE\fR>] [\fB--icon-padding\fR <\fISIZE\fR>] [\fB--border-size\fR <\fISIZE\fR>]
+  [\fB--background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] [\fB--hover-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>]
+  [\fB--border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] [\fB--hover-border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>]
+  [\fB--icon-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--desktop-file-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--font-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--tooltip-text <\fITEXT\fR>] [\fB--tooltip-font\fR <\fIFONT\fR/\fISIZE\fR>]
+  [\fB--tooltip-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] 
+  [\fB--tooltip-foreground-color\fR <\fICOLOR\fR>]
+  [\fB--tooltip-border-size\fR <\fISIZE\fR>] [\fB--tooltip-text-padding\fR <\fISIZE\fR>]
+  [\fB--tooltip-show-delay\fR <\fIDELAY\fR>] [\fB--tooltip-hide-delay\fR <\fIDELAY\fR>]
+  [\fB--icon-grayscale\fR] [\fB--hover-icon-grayscale\fR]
+  [\fB--frame\fR <\fIHICOLOR\fR>/<\fIHOVER_HICOLOR\fR>:<\fILOCOLOR\fR>/<\fIHOVER_LOCOLOR\R>[:\fISIZE\fR]]
+  [\fB--icon-brightness\fR <\fIVALUE\fR>] [\fB--hover-icon-brightness\fR <\fIVALUE\fR>]
+  [\fB--icon-contrast\fR <\fIVALUE\fR>] [\fB--hover-icon-contrast\fR <\fIVALUE\fR>]
+  [\fB--icon-gamma\fR <\fIVALUE\fR>] [\fB--hover-icon-gamma\fR <\fIVALUE\fR>]
+  [\fB--double-click\fR [<\fIDELAY\fR>]] [\fB--display\fR <\fINAME\fR>] [\fB--broken-wm\fR]
+  [\fB--exit-on-right-click\fR]
+
+.SH DESCRIPTION
+\fBwmalauncher\fR is an easy to use and highly  configurable application 
+launcher especially designed for fluxbox, but which also works well under 
+blackbox, openbox, windowmaker.
+
+\fBwmalauncher\fR supports \fIXPM\fR, \fIPNG\fR, \fISVG\fR icons, \fI.desktop\fR
+files, true-type fonts (for tooltip text), allows to configure, among others,
+the brightness, contrast and gamma correction of icons, allows to draw a frame
+around the button, etc...
+
+.SH OPTION
+
+.TP
+\fB-h\fR|\fB--help\fR
+.RS
+Prints this help page.
+.RE
+.HP
+
+.TP
+\fB-f\fR|\fB--fonts-info\fR [<\fIPATH\fR>[:<\fIPATH\fR>...]]
+.RS
+Prints information on (default) supported fonts and on fonts accessible
+from the given path(s), if any.
+.RE
+.HP
+
+.TP
+\fB-C\fR|\fB--config\fR <\fIFILE\fR> [\fB-p\fR|\fB--prefix\fR <\fIPREFIX\fR>]
+.RS
+Loads the configuration from the file <\fIFILE\fR>, then updates the settings
+for which there are entries with the prefix <\fIPREFIX\fR>, if any.
+
+see section \fBCONFIGURATION FILE FORMAT\fR for more about configuration files.
+.RE
+.HP
+
+.TP
+\fB-c\fR|\fB--command\fR <\fICMD\fR> \fB-i\fR|\fB--icon\fR <\fIICON\fR>
+.RS
+Sets the command to execute to <\fICMD\fR> and the icon to display to <\fIICON\fR>.
+
+<\fIICON\fR> can be an absolute pathanme, or a simple name (with or without
+extension) in which case \fBwmalauncher\fR will use the first icon that 
+matches <\fIICON\fR> found in the icon search paths. 
+
+See option \fB--icon-search-path\fR for more about icon search paths.
+
+.RE
+.RH
+
+.TP
+\fB-d\fR|\fB--desktop-file\fR <\fIFILE\fR>[:<\fIFILE\fR>...]
+.RS
+Loads the 1st \fI.desktop\fR file that matches any of the specified (path)names,
+then setups the command to execute, the icon to display and the tooltip text
+accordingly.
+
+<\fIFILE\fR> can be an absolute pathanme, or a simple name (with or without
+extension) in which case \fBwmalauncher\fR will use the first .desktop file
+that matches <\fIFILE\fR> found in the 'desktop file search paths'.
+
+See option \fB--desktop-file-search-path\fR for more about 'desktop file 
+search paths'.
+
+.RE
+.RH
+
+.TP
+\fB-T\fR|\fB--run-in-terminal\fR
+.RS
+Activates execution of the command/application in a terminal window (see
+option \fB--preferred-terminals\fR).
+.RE
+.RH
+
+
+.TP
+\fB-P\fR|\fB--preferred-terminals\fR <\fITERM\fR>[:<\fITERM\fR>...]
+.RS
+Sets the list of preferred terminal emulators. The 1st available terminal
+in this list is used to run the command/application when (1) the option
+\fB--run-in-terminal\fR is passed in argument, (2) the desktop file passed 
+to option \fB--desktop-file\fR includes an entry '\fITerminal=true\fR'.
+
+By default, the list of preferred terminal emulators is set to : @DEFAULT_PREFERRED_TERMINALS@
+.RE
+.RH
+
+
+.TP
+\fB-w\fR|\fB--window-size\fR <\fISIZE\fR>
+.RS
+Sets the window size to <\fISIZE\fR> x <\fISIZE\fR>. Default to 64.
+.RE
+.RH
+
+.TP
+\fB-g\fR|\fB--icon-padding\fR <\fISIZE\fR>
+.RS
+Sets the padding size around the icon to <\fISIZE\fR>. Default to 3.
+.RE
+.RH
+
+.TP
+\fB-z\fR|\fB--border-size\fR <\fISIZE\fR>
+.RS
+Sets the window border size to <\fISIZE\fR>. Default to 4.
+.RE
+.RH
+
+.TP
+\fB-k\fR|\fB--background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Sets the background color to the plain color <\fICOLOR\fR> or 
+to the color gradient <\fIGRADIENT\fR>. Default to the plain
+color \fIBlack\fR.
+
+See sections \fBCOLORS\fR and \fBGRADIENTS\fR for informations 
+about supported colors and gradients.
+.RE
+.RH
+
+
+.TP
+\fB-K\fR|\fB--hover-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Sets the background color on mouse hovers to the plain color
+<\fICOLOR\fR> or to the color gradient <\fIGRADIENT\fR>. Default to
+the plain color \fIBlack\fR.
+
+See sections \fBCOLORS\fR and \fBGRADIENTS\fR for informations about
+supported colors and gradients. 
+.RE
+.RH
+
+.TP
+\fB-b\fR|\fB--border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Sets the window border color to the plain color <\fICOLOR\fR> or to 
+the color gradient <\fIGRADIENT\fR> . Default to the plain color 
+\fIWhite\fR.
+
+See sections \fBCOLORS\fR and \fBGRADIENTS\fR for informations about 
+supported colors and gradients.
+.RE
+.RH
+
+.TP
+\fB-B\fR|\fB--hover-border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Sets the window border color on mouse hovers to the plain color 
+<\fICOLOR\fR> or to the color gradient <\fIGRADIENT\fR>. Default to the
+plain color \fIWhite\fR.
+
+See sections \fBCOLORS\fR and \fBGRADIENTS\fR for informations about 
+supported colors and gradients.
+.RE
+.RH
+
+.TP
+\fB-a\fR|\fB--icon-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Prepends the given path(s) to the icons search path, which is initially
+set to : 
+
+  @DEFAULT_ICON_SEARCH_PATH@
+  
+Any path given in arguments which is not absolute is assumed to
+be relative to the root path: @MAIN_ROOT_ICON_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-A\fR|\fB--desktop-file-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Prepends the given path(s) to the "desktop files" search path, which is 
+initially set to :
+
+ @DEFAULT_DESKTOP_FILE_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-n\fR|\fB--font-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Prepends the given path(s) to the fonts search path, which is initially 
+set to :
+
+  @DEFAULT_FONT_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-t\fR|\fB--tooltip-text\fR <\fITEXT\fR>
+.RS
+Sets the tooltip text to <\fITEXT\fR>.
+.RE
+.RH
+
+.TP
+\fB-F\fR|\fB--tooltip-font\fR <\fIFONT\fR/\fISIZE\fR>
+.RS
+Sets the tooltip font to <\fIFONT\fR> with a size of <\fISIZE\fR>. Default to "DejaVuSans/11"
+.RE
+.RH
+
+.TP
+\fB-o\fR|\fB--tooltip-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Sets the tooltip background color to the plain color <\fICOLOR\fR> or to
+the color gradient <\fIGRADIENT\fR>. Default to the plain color \fIWhite\fR.
+
+See sections \fBCOLORS\fR and \fBGRADIENTS\fR for informations about 
+supported colors and gradients.
+.RE
+.RH
+
+.TP
+\fB-O\fR|\fB--tooltip-foreground-color\fR <\fICOLOR\fR>
+.RS
+Sets the tooltip foreground color to <\fICOLOR\fR>. Default to \fIBlack\fR.
+
+See section \fBCOLORS\fR for informations about supported colors.
+.RE
+.RH
+
+.TP
+\fB-Z\fR|\fB--tooltip-border-size\fR <\fISIZE\fR>
+.RS
+  Sets the tooltip border size to <\fISIZE\fR>. Default to 1.
+.RE
+.RH
+
+.TP
+\fB-G\fR|\fB--tooltip-text-padding\fR <\fISIZE\fR>
+.RS
+Sets the padding size around the tooltip text to <\fISIZE\fR>. Default to 3.
+.RE
+.RH
+
+.TP
+\fB-l\fR|\fB--tooltip-show-delay\fR <\fIDELAY\fR>
+.RS
+Sets the tooltip show timing delay to <\fIDELAY\fR> ms. Default to 1000 ms.
+.RE
+.RH
+
+.TP
+\fB-L\fR|\fB--tooltip-hide-delay\fR <\fIDELAY\fR>
+.RS
+Sets the tooltip hide timing delay to <\fIDELAY\fR> ms. Default to 5000 ms.
+.RE
+.RH
+
+.TP
+\fB-y\fR|\fB--icon-grayscale\fR
+.RS
+Displays the icon in grayscale mode.
+.RE
+.RH
+
+.TP
+\fB-Y\fR|\fB--hover-icon-grayscale\fR
+.RS
+Displays the icon in grayscale mode on mouse hovers.
+.RE
+.RH
+
+.TP
+\fB-E\fR|\fB--frame\fR <\fIHICOLOR\fR>/<\fIHOVER_HICOLOR\fR>:<\fILOCOLOR\fR>/<\fIHOVER_LOCOLOR\fR>[:\fISIZE\fR]
+.RS
+Draws a frame with a thickness of <\fISIZE\fR> pixels around the icon. The 
+top and left borders are painted using color <\fIHICOLOR\fR>, while the bottom
+and right borders are painted using color <\fILOCOLOR\fR>. On mouse hovers, 
+the colors <\fIHOVER_HICOLOR\fR> and <\fIHOVER_LOCOLOR\fR> are used instead. 
+When the left mouse button is pressed, the \fIHI\fR/\fILO\fR colors are swapped, 
+unless when option \fB-2\fR|\fB--double-click\fR is used.
+
+Default to: \fIWhite\fR/\fIWhite\fR:\fIBlack\fR/\fIBlack\fR:1
+
+See section \fBCOLORS\fR for informations about supported colors.
+
+.RE
+.RH
+
+.TP
+\fB-r\fR|\fB--icon-brightness\fR <\fIVALUE\fR>
+.RS
+Sets the icon brightness to <\fRVALUE\fR>. Default to 0.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+brightness values.
+.RE
+.RH
+
+.TP
+\fB-R\fR|\fB--hover-icon-brightness\fR <\fIVALUE\fR>
+.RS
+Sets the icon brightness on mouse hovers to <\fIVALUE\fR>. Default to 0.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+brightness values.
+.RE
+.RH
+
+.TP
+\fB-s\fR|\fB--icon-contrast\fR <\fIVALUE\fR>
+.RS
+Sets the icon contrast to <\fIVALUE\fR>. Default to 1.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+contrast values.
+.RE
+.RH
+
+.TP
+\fB-S\fR|\fB--hover-icon-contrast\fR <\fIVALUE\fR>
+.RS
+Sets the icon contrast on mouse hovers to <\fIVALUE\fR>. Default to 1.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+contrast values.
+.RE
+.RH
+
+.TP
+\fB-m\fR|\fB--icon-gamma\fR <\fIVALUE\fR>
+.RS
+Sets the icon gamma to <\fIVALUE\fR>. Default to 1.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+gamma values.
+.RE
+.RH
+
+.TP
+\fB-M\fR|\fB--hover-icon-gamma\fR <\fIVALUE\fR>
+.RS
+Sets the icon gamma on mouse hovers to <\fIVALUE\fR>. Default to 1.000000.
+
+See section \fBICON BRIGHTNESS/CONTRAST/GAMMA\fR for more about
+gamma values.
+.RE
+.RH
+
+.TP
+\fB-2\fR|\fB--double-click\fR [<\fIDELAY\fR>]
+.RS
+Enables option "double-click to run the command" and sets the double-click
+timing delay to <\fIDELAY\fR> (Default to 450 ms), if any.
+.RE
+.RH
+
+.TP
+\fB-D\fR|\fB--display\fR <\fINAME\fR>
+.RS
+Sets the display to use to <\fINAME\fR>.
+.RE
+.RH
+
+.TP
+\fB-W\fR|\fB--broken-wm\fR
+.RS
+Enables fix for "broken" window managers.
+.RE
+.RH
+
+.TP
+\fB-x\fR|\fB--exit-on-right-click\fR
+.RS
+Terminates this wmalauncher instance on right click.
+.RE
+.RH
+
+.SH CONFIGURATION FILE FORMAT
+The file passed in argument to option \fB-C|--config\fR must be to plain
+text format with entries to the format :
+
+  [prefix.]key=value
+
+Commented lines, i.e. which start with a # - preceded or not by space(s) -, 
+are ignored.
+
+Spaces at both side of loaded values are automatically removed.
+
+When there are more than one occurence of a given \fB[prefix.]key\fR, only 
+the first value is loaded. The other values are ignored.
+
+\fBkey\fR can be the name, without the dashes, of any of the supported 
+options, with exception to \fIhelp\fR, \fIfonts-info\fR, \fIdisplay\fR, 
+and, \fIbroken-wm\fR :
+
+.RS
+.TS
+allbox ;
+l l.
+Key	Type
+\fBcommand\fR	String
+\fBicon\fR	String
+\fBdesktop-file\fR	String
+\fBrun-in-terminal\fR	Boolean (1)
+\fBpreferred-terminals\fR	String
+\fBwindow-size\fR	Integer
+\fBicon-padding\fR	Integer
+\fBborder-size\fR	Integer
+\fBbackground-color\fR	String (2,3)
+\fBhover-background-color\fR	String (2,3)
+\fBborder-color\fR	String (2,3)
+\fBhover-border-color\fR	String (2,3)
+\fBicon-search-path\fR	String
+\fBdesktop-file-search-path\fR	String
+\fBfont-search-path\fR	String
+\fBtooltip-text\fR	String
+\fBtooltip-font\fR	String
+\fBtooltip-background-color\fR	String (2,3)
+\fBtooltip-foreground-color\fR	String (2)
+\fBtooltip-border-size\fR	Integer
+\fBtooltip-text-padding\fR	Integer
+\fBtooltip-show-delay\fR	Integer
+\fBtooltip-hide-delay\fR	Integer
+\fBicon-grayscale\fR	Boolean (1)
+\fBhover-icon-grayscale\fR	Boolean (1)
+\fBframe\fR	String (2)
+\fBicon-brightness\fR	Float
+\fBhover-icon-brightness\fR	Float
+\fBicon-contrast\fR	Float
+\fBhover-icon-contrast\fR	Float
+\fBicon-gamma\fR	Float
+\fBhover-icon-gamma\fR	Float
+\fBdouble-click\fR	Integer
+\fBexit-on-right-click\fR	Boolean (1)
+.TE
+.RE
+
+(1) Valid boolean values are: 1, true, on, yes, 0, false, off, no.
+
+(2) See section \fBCOLORS\fR for informations about supported colors.
+
+(3) See section \fBGRADIENTS\fR for informations about supported gradients.
+
+\fBprefix\fR can be any string.
+
+When running the command '\fBwmalauncher --config F --prefix P\fR', the value 
+of each unprefixed key found in \fBF\fR is loaded first, then the value of each
+key with prefix \fBP\fR. This allows to have configurations files with a global
+section for visual settings, and multiple prefixed sections for
+the applications. Example :
+  
+  # Visual settings (global section)
+  #
+  window-size            = 72
+  icon-padding           = 8
+  border-size            = 4
+  background-color       = Azure
+  hover-background-color = Azure
+  border-color           = Dodger Blue
+  hover-border-color     = Deep Sky Blue
+  icon-grayscale         = on
+  hover-icon-grayscale   = off
+  tooltip-show-delay     = 250
+  tooltip-hide-delay     = 30000
+  hover-icon-brightness  = 0.25
+  
+  # section dedicated to firefox (prefix=firefox)
+  #
+  firefox.desktop-file   = mozilla-firefox.desktop
+
+  # section dedicated to thunderbird (prefix=thunderbird)
+  #
+  thunderbird.desktop-file  = mozilla-thunderbird.desktop
+  
+  # section dedicated to htop (prefix=htop)
+  #
+  # this section does not make use of the .desktop file for
+  # htop only to show how to manually configure wmalauncher in
+  # case of application that require to be run in a terminal
+  # window.
+  #
+  htop.command             = /usr/bin/htop
+  htop.icon                = htop
+  htop.run-in-terminal     = true
+  htop.preferred-terminals = /usr/bin/xfce4-terminal:/usr/bin/xterm
+  htop.tooltip-text        = Interactive Process Viewer
+  
+The configuration file above can be used to start 3 instances
+of \fBwmalauncher\fR respectively dedicated to launch the
+internet browser firefox, the mail client Thunderbird, and
+the process viewer Htop. Example :
+
+  $ wmalauncher --config F --prefix firefox &
+  $ wmalauncher --config F --prefix thunderbird &
+  $ wmalauncher --config F --prefix htop &
+
+.SH COLORS
+
+Any argument of type \fICOLOR\fR can be an \fIX11 color name\fR or an
+hex triplet to the format \fI#rrggbb\fR.
+
+For a list of X11 color names, see :
+
+  https://en.wikipedia.org/wiki/X11_color_names
+
+.SH GRADIENTS
+
+\fBwmalauncher\fR supports \fIhorizontal\fR, \fIvertical\fR, and,
+\fIdiagonal\fR gradients between two or more colors.
+
+Any color gradient must be specified by a string to the format :
+
+    <TYPE>:<COLOR_1>,<COLOR_2>[,<COLOR_i> ...]
+    
+<\fITYPE\fR> can be one of the following :
+
+.RS
+\(bu \fBHGRAD\fR : horizontal gradient from left to right.
+.RE
+
+.RS
+\(bu \fBVGRAD\fR : vertical gradient from top to bottom.
+.RE
+
+.RS
+\(bu \fBDGRAD\fR : diagonal gradient from top-left to bottom-right.
+.RE
+
+<\fICOLOR\fR_i> can be any of the supported colors. See section 
+\fBCOLORS\fR for more about supported colors.
+
+\fBExamples\fR:
+
+.RS
+\(bu \fIHGRAD:Black,White\fR
+.RS
+Defines an horizontal gradient between \fIBlack\fR and \fIWhite\fR colors.
+.RE
+.RE
+
+.RS
+\(bu \fIVGRAD:Black,Red,White\fR
+.RS
+Defines a vertical gradient between \fIBlack\fR and \fIRed\fR colors, then
+between \fIRed\fR and \fIWhite\fR colors.
+.RE
+.RE
+
+.RS
+\(bu \fIDGRAD:Green,Blue\fR
+.RS
+Defines a diagonal gradient between \fIGreen\fR and \fIBlue\fR colors.
+.RE
+.RE
+
+
+.SH ICON BRIGHTNESS/CONTRAST/GAMMA 
+
+As stated in Imlib2 documentation :
+
+.RS
+\(bu brightness values of 0 do not affect anything. -1.0 will make things completely
+black and 1.0 will make things all white. Values in-between vary brightness linearly. 
+.RE
+
+.RS
+\(bu Contrast of 1.0 does nothing. 0.0 will merge to gray, 2.0 will double contrast etc. 
+.RE
+
+.RS
+\(bu A gamma of 1.0 is normal linear, 2.0 brightens and 0.5 darkens etc. Negative values are not allowed. 
+.RE
+
+.SH AUTHORS
+Sébastien Ballet <slacker6896@gmail.com>

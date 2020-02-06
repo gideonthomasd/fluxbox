@@ -1,0 +1,811 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the wmalauncher package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: wmalauncher 2020.0124\n"
+"Report-Msgid-Bugs-To: slacker6896@gmail.com\n"
+"POT-Creation-Date: 2020-01-24 17:33+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/wmalhelp.c:35
+#, c-format
+msgid "       wmalauncher %s <CMD> %s <ICON> [OPTION]...\n"
+msgstr ""
+
+#: src/wmalhelp.c:31
+#, c-format
+msgid "       wmalauncher %s <FILE> [%s <PREFIX>] [OPTION]...\n"
+msgstr ""
+
+#: src/wmalhelp.c:39
+#, c-format
+msgid "       wmalauncher %s <FILE>[:<FILE>...] [OPTION]...\n"
+msgstr ""
+
+#: src/wmalhelp.c:28
+#, c-format
+msgid "       wmalauncher %s [<PATH>[:<PATH>...]]\n"
+msgstr ""
+
+#: src/wmutil.c:971
+#, c-format
+msgid "  Error %d: %s\n"
+msgstr ""
+
+#: src/wmalhelp.c:53 src/wmalhelp.c:56 src/wmalhelp.c:66
+#, c-format
+msgid "  [%s <COLOR|GRADIENT>] "
+msgstr ""
+
+#: src/wmalhelp.c:72
+#, c-format
+msgid "  [%s <DELAY>] "
+msgstr ""
+
+#: src/wmalhelp.c:78
+#, c-format
+msgid "  [%s <HICOLOR>/<HOVER_HICOLOR>:<LOCOLOR>/<HOVER_LOCOLOR>[:SIZE]]\n"
+msgstr ""
+
+#: src/wmalhelp.c:59 src/wmalhelp.c:60 src/wmalhelp.c:61
+#, c-format
+msgid "  [%s <PATH>[:<PATH>...]]\n"
+msgstr ""
+
+#: src/wmalhelp.c:49 src/wmalhelp.c:69
+#, c-format
+msgid "  [%s <SIZE>] "
+msgstr ""
+
+#: src/wmalhelp.c:63
+#, c-format
+msgid "  [%s <TEXT>] "
+msgstr ""
+
+#: src/wmalhelp.c:81 src/wmalhelp.c:84 src/wmalhelp.c:87
+#, c-format
+msgid "  [%s <VALUE>] "
+msgstr ""
+
+#: src/wmalhelp.c:90
+#, c-format
+msgid "  [%s [<DELAY>]] "
+msgstr ""
+
+#: src/wmalhelp.c:403
+#, c-format
+msgid ""
+"%d fonts found :\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:146
+#, c-format
+msgid ""
+"%s\n"
+"  Activates execution of the command/application in a terminal window (see\n"
+"  option %s).\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:282
+#, c-format
+msgid ""
+"%s\n"
+"  Displays the icon in grayscale mode on mouse hovers.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:277
+#, c-format
+msgid ""
+"%s\n"
+"  Displays the icon in grayscale mode.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:354
+#, c-format
+msgid ""
+"%s\n"
+"  Enables fix for \"broken\" window managers.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:112
+#, c-format
+msgid ""
+"%s\n"
+"  Prints this help page.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:359
+#, c-format
+msgid ""
+"%s\n"
+"  Terminates this wmalauncher instance on right click.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:131
+#, c-format
+msgid ""
+"%s <CMD> %s <ICON>\n"
+"  Sets the command to execute to <CMD> and the icon to display to <ICON>.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:247
+#, c-format
+msgid ""
+"%s <COLOR>\n"
+"  Sets the tooltip foreground color to <COLOR>. Default to %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:193
+#, c-format
+msgid ""
+"%s <COLOR|GRADIENT>\n"
+"  Sets the background color on mouse hovers to the plain color <COLOR> or to "
+"the\n"
+"  color gradient <GRADIENT>. Default to the plain color %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:186
+#, c-format
+msgid ""
+"%s <COLOR|GRADIENT>\n"
+"  Sets the background color to the plain color <COLOR> or to the color "
+"gradient\n"
+"  <GRADIENT>. Default to the plain color %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:240
+#, c-format
+msgid ""
+"%s <COLOR|GRADIENT>\n"
+"  Sets the tooltip background color to the plain color <COLOR> or to the "
+"color\n"
+"  gradient <GRADIENT>. Default to the plain color %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:207
+#, c-format
+msgid ""
+"%s <COLOR|GRADIENT>\n"
+"  Sets the window border color on mouse hovers to the plain color <COLOR> or "
+"to the\n"
+"  color gradient <GRADIENT>. Default to the plain color %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:200
+#, c-format
+msgid ""
+"%s <COLOR|GRADIENT>\n"
+"  Sets the window border color to the plain color <COLOR> or to the color "
+"gradient\n"
+"  <GRADIENT>. Default to the plain color %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:271
+#, c-format
+msgid ""
+"%s <DELAY>\n"
+"  Sets the tooltip hide timing delay to <DELAY> ms. Default to %d ms.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:265
+#, c-format
+msgid ""
+"%s <DELAY>\n"
+"  Sets the tooltip show timing delay to <DELAY> ms. Default to %d ms.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:123
+#, c-format
+msgid ""
+"%s <FILE> [%s <PREFIX>]\n"
+"  Loads the configuration from the file <FILE>, then updates the settings\n"
+"  for which there are entries with the prefix <PREFIX>, if any.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:138
+#, c-format
+msgid ""
+"%s <FILE>[:<FILE>...]\n"
+"  Loads the 1st .desktop file that matches any of the specified "
+"(path)names,\n"
+"  then setups the command to execute, the icon to display and the tooltip "
+"text\n"
+"  accordingly.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:234
+#, c-format
+msgid ""
+"%s <FONT/SIZE>\n"
+"  Sets the tooltip font to <FONT> with a size of <SIZE>. Default to %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:287
+#, c-format
+msgid ""
+"%s <HICOLOR>/<HOVER_HICOLOR>:<LOCOLOR>/<HOVER_LOCOLOR>[:SIZE]\n"
+"  Draws a frame with a thickness of <SIZE> pixels around the icon. The top "
+"and left\n"
+"  borders are painted using color <HICOLOR>, while the bottom and right "
+"borders are\n"
+"  painted using color <LOCOLOR>. On mouse hovers, the colors <HOVER_HICOLOR> "
+"and\n"
+"  <HOVER_LOCOLOR> are used instead. When the left mouse button is pressed, "
+"the \n"
+"  HI/LO colors are swapped, unless when option %s is used.  \n"
+"\n"
+"  Default to: %s/%s:%s/%s:%d\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:349
+#, c-format
+msgid ""
+"%s <NAME>\n"
+"  Sets the display to use to <NAME>.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:219
+#, c-format
+msgid ""
+"%s <PATH>[:<PATH>...]\n"
+"  Prepends the given path(s) to the \"desktop files\" search path.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:224
+#, c-format
+msgid ""
+"%s <PATH>[:<PATH>...]\n"
+"  Prepends the given path(s) to the fonts search path.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:214
+#, c-format
+msgid ""
+"%s <PATH>[:<PATH>...]\n"
+"  Prepends the given path(s) to the icons search path.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:174
+#, c-format
+msgid ""
+"%s <SIZE>\n"
+"  Sets the padding size around the icon to <SIZE>. Default to %d.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:259
+#, c-format
+msgid ""
+"%s <SIZE>\n"
+"  Sets the padding size around the tooltip text to <SIZE>. Default to %d.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:253
+#, c-format
+msgid ""
+"%s <SIZE>\n"
+"  Sets the tooltip border size to <SIZE>. Default to %d.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:180
+#, c-format
+msgid ""
+"%s <SIZE>\n"
+"  Sets the window border size to <SIZE>. Default to %d.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:167
+#, c-format
+msgid ""
+"%s <SIZE>\n"
+"  Sets the window size to <SIZE> x <SIZE>. Default to %d.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:153
+#, c-format
+msgid ""
+"%s <TERM>[:<TERM>...]\n"
+"  Sets the list of preferred terminal emulators. The 1st available terminal\n"
+"  in this list is used to run the command/application when (1) the option\n"
+"  %s is passed in argument, (2) the desktop file passed to\n"
+"  option %s includes an entry 'Terminal=true'.\n"
+"\n"
+"  By default, the list of preferred terminal emulators is set to :\n"
+"\n"
+"    %s.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:229
+#, c-format
+msgid ""
+"%s <TEXT>\n"
+"  Sets the tooltip text to <TEXT>.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:310
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon brightness on mouse hovers to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:304
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon brightness to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:322
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon contrast on mouse hovers to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:316
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon contrast to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:335
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon gamma on mouse hovers to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:329
+#, c-format
+msgid ""
+"%s <VALUE>\n"
+"  Sets the icon gamma to <VALUE>. Default to %f.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:342
+#, c-format
+msgid ""
+"%s [<DELAY>]\n"
+"  Enables option \"double-click to run the command\" and sets the double-"
+"click\n"
+"  timing delay to <DELAY> (Default to %d ms), if any.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:117
+#, c-format
+msgid ""
+"%s [<PATH>[:<PATH>...]]\n"
+"  Prints information on (default) supported fonts and on fonts accessible\n"
+"  from the given path(s), if any.\n"
+"\n"
+msgstr ""
+
+#: src/cmdparser.c:284
+#, c-format
+msgid "%s: Argument '%s' is missing.\n"
+msgstr ""
+
+#: src/cmdparser.c:38 src/cmdparser.c:381
+#, c-format
+msgid "%s: Argument 'FILE' is missing.\n"
+msgstr ""
+
+#: src/cmdparser.c:369
+#, c-format
+msgid "%s: Argument 'NAME' is missing.\n"
+msgstr ""
+
+#: src/cmdparser.c:57
+#, c-format
+msgid "%s: Argument 'PREFIX' is missing.\n"
+msgstr ""
+
+#: src/cmdparser.c:122
+#, c-format
+msgid "%s: Expected 'CMD' is missing.\n"
+msgstr ""
+
+#: src/wmutil.c:807
+#, c-format
+msgid "...fall back to default font '%s'\n"
+msgstr ""
+
+#: src/cmdparser.c:262
+msgid "<COLOR>"
+msgstr ""
+
+#: src/cmdparser.c:260
+msgid "<COLOR|GRADIENT>"
+msgstr ""
+
+#: src/cmdparser.c:268
+msgid "<DELAY>"
+msgstr ""
+
+#: src/cmdparser.c:264
+msgid "<FONT/SIZE>"
+msgstr ""
+
+#: src/cmdparser.c:277
+msgid "<HICOLOR>/<HOVER_HICOLOR>:<LOCOLOR>/<HOVER_LOCOLOR>[:<SIZE>]"
+msgstr ""
+
+#: src/cmdparser.c:240
+msgid "<NAME>"
+msgstr ""
+
+#: src/cmdparser.c:246
+msgid "<PATH>[:<PATH>...]"
+msgstr ""
+
+#: src/cmdparser.c:252
+msgid "<SIZE>"
+msgstr ""
+
+#: src/cmdparser.c:242
+msgid "<TERM>:[<TERM>...]"
+msgstr ""
+
+#: src/cmdparser.c:254
+msgid "<TEXT>"
+msgstr ""
+
+#: src/cmdparser.c:275
+msgid "<VALUE>"
+msgstr ""
+
+#: src/cmdparser.c:361
+#, c-format
+msgid "Argument '%s' is missing.\n"
+msgstr ""
+
+#: src/cmdparser.c:450
+#, c-format
+msgid "Error, .desktop file '%s' does not exist.\n"
+msgstr ""
+
+#: src/settings.c:1254
+#, c-format
+msgid "Error, Expected '%s=<value>' is missing in configuration file %s\n"
+msgstr ""
+
+#: src/cmdparser.c:454
+#, c-format
+msgid "Error, No .desktop file match any of the specified (path)names: %s\n"
+msgstr ""
+
+#: src/settings.c:1243
+#, c-format
+msgid "Expected '%s=<value>' is missing in configuration file %s\n"
+msgstr ""
+
+#: src/wmutil.c:315
+msgid "Failed to allocate XWMHints instance.\n"
+msgstr ""
+
+#: src/wmutil.c:359
+#, c-format
+msgid "Failed to allocate window name '%s'\n"
+msgstr ""
+
+#: src/wmutil.c:968
+#, c-format
+msgid "Failed to load %s\n"
+msgstr ""
+
+#: src/settings.c:1282
+#, c-format
+msgid "Failed to load configuration file '%s'. Error #%d\n"
+msgstr ""
+
+#: src/wmutil.c:790
+#, c-format
+msgid "Failed to load font %s..."
+msgstr ""
+
+#: src/wmalauncher.c:203
+#, c-format
+msgid "Failed to load icon %s. Imlib Error code %d.\n"
+msgstr ""
+
+#: src/wmalauncher.c:622 src/wmalhelp.c:378
+#, c-format
+msgid "Failed to open display '%s'\n"
+msgstr ""
+
+#: src/wmalauncher.c:497
+#, c-format
+msgid "Failed to run %s. Error %d: %s"
+msgstr ""
+
+#: src/wmalhelp.c:397
+msgid "Font paths :\n"
+msgstr ""
+
+#: src/wmalhelp.c:363
+msgid ""
+"For more detailed informations, read the man page :\n"
+"\n"
+"\t$ man wmalauncher\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:44
+msgid "OPTIONS:\n"
+msgstr ""
+
+#: src/cmdparser.c:213
+#, c-format
+msgid "Unexpected argument '%s'\n"
+msgstr ""
+
+#: src/cmdparser.c:399
+#, c-format
+msgid "Unexpected option '%s'.\n"
+msgstr ""
+
+#: src/cmdparser.c:160 src/cmdparser.c:393
+#, c-format
+msgid "Unrecognized option '%s'.\n"
+msgstr ""
+
+#: src/wmalhelp.c:25
+#, c-format
+msgid "Usage: wmalauncher %s\n"
+msgstr ""
+
+#: src/cfparser.c:182
+#, c-format
+msgid ""
+"Warning, entry ignored at line #%d in file %s. The key '%s' is already "
+"assigned.\n"
+"\n"
+msgstr ""
+
+#: src/wmalhelp.c:67
+#, c-format
+msgid "[%s <COLOR>]\n"
+msgstr ""
+
+#: src/wmalhelp.c:54 src/wmalhelp.c:57
+#, c-format
+msgid "[%s <COLOR|GRADIENT>]\n"
+msgstr ""
+
+#: src/wmalhelp.c:73
+#, c-format
+msgid "[%s <DELAY>]\n"
+msgstr ""
+
+#: src/wmalhelp.c:64
+#, c-format
+msgid "[%s <FONT/SIZE>]\n"
+msgstr ""
+
+#: src/wmalhelp.c:91
+#, c-format
+msgid "[%s <NAME>] "
+msgstr ""
+
+#: src/wmalhelp.c:51 src/wmalhelp.c:70
+#, c-format
+msgid "[%s <SIZE>]\n"
+msgstr ""
+
+#: src/wmalhelp.c:50
+#, c-format
+msgid "[%s <SIZE>] "
+msgstr ""
+
+#: src/wmalhelp.c:47
+#, c-format
+msgid "[%s <TERM>[:<TERM>...]]\n"
+msgstr ""
+
+#: src/wmalhelp.c:82 src/wmalhelp.c:85 src/wmalhelp.c:88
+#, c-format
+msgid "[%s <VALUE>]\n"
+msgstr ""
+
+#: src/settings.c:161
+#, c-format
+msgid "[%s] Warning, <HICOLOR/HOVER_HICOLOR> is missing. Default to '%s/%s'.\n"
+msgstr ""
+
+#: src/settings.c:144
+#, c-format
+msgid "[%s] Warning, <HICOLOR> is missing. Default to '%s'.\n"
+msgstr ""
+
+#: src/settings.c:153
+#, c-format
+msgid "[%s] Warning, <HOVER_HICOLOR> is missing. Default to '%s'.\n"
+msgstr ""
+
+#: src/settings.c:185
+#, c-format
+msgid "[%s] Warning, <HOVER_LOCOLOR> is missing. Default to '%s'.\n"
+msgstr ""
+
+#: src/settings.c:193
+#, c-format
+msgid "[%s] Warning, <LOCOLOR/HOVER_LOCOLOR> is missing. Default to '%s/%s'.\n"
+msgstr ""
+
+#: src/settings.c:176
+#, c-format
+msgid "[%s] Warning, <LOCOLOR> is missing. Default to '%s'.\n"
+msgstr ""
+
+#: src/settings.c:280
+#, c-format
+msgid "[%s] Warning, border size %d is to high. Set to %d\n"
+msgstr ""
+
+#: src/settings.c:297
+#, c-format
+msgid "[%s] Warning, frame thickness %d is to high. Set to %d\n"
+msgstr ""
+
+#: src/settings.c:288
+#, c-format
+msgid "[%s] Warning, icon padding %d is to high. Set to %d\n"
+msgstr ""
+
+#: src/settings.c:883 src/settings.c:902
+#, c-format
+msgid ""
+"[%s] Warning, invalid delay '%s'. Must be an integer in range [%d..%d]. "
+"Default to: %d.\n"
+msgstr ""
+
+#: src/settings.c:731
+#, c-format
+msgid ""
+"[%s] Warning, invalid size '%s'. Must be an integer >=1. Default to: %d.\n"
+msgstr ""
+
+#: src/settings.c:713
+#, c-format
+msgid ""
+"[%s] Warning, invalid size '%s'. Must be an integer in range [%d..%d]. "
+"Default to: %d.\n"
+msgstr ""
+
+#: src/settings.c:208
+#, c-format
+msgid "[%s] Warning, invalid thickness '%s'. Must be >0. Reset to %d.\n"
+msgstr ""
+
+#: src/settings.c:1035
+#, c-format
+msgid ""
+"[%s] Warning, invalid timing delay '%s'. Must be an integerin range [%d.."
+"%d]. Default to: %d.\n"
+msgstr ""
+
+#: src/settings.c:1002 src/settings.c:1017
+#, c-format
+msgid ""
+"[%s] Warning, invalid value '%s'. Must be a float >= %f. Default to: %f.\n"
+msgstr ""
+
+#: src/settings.c:946 src/settings.c:960 src/settings.c:974 src/settings.c:988
+#, c-format
+msgid "[%s] Warning, invalid value '%s'. Must be a float. Default to: %f.\n"
+msgstr ""
+
+#: src/settings.c:827
+#, c-format
+msgid "[%s] Warning, missing size in font spec. '%s'. Default to: %s\n"
+msgstr ""
+
+#: src/settings.c:318
+#, c-format
+msgid ""
+"[%s] Warning, reset border size and icon padding to their default value.\n"
+msgstr ""
+
+#: src/settings.c:313
+#, c-format
+msgid ""
+"[%s] Warning, reset border size, icon padding and frame thickness to their "
+"default value.\n"
+msgstr ""
+
+#: src/settings.c:312
+#, c-format
+msgid ""
+"[%s] Warning, reset border size, icon padding and frame thicknessto their "
+"default value.\n"
+msgstr ""
+
+#: src/settings.c:634
+#, c-format
+msgid "[%s] Warning, unrecognized value '%s'. Default to '%s'.\n"
+msgstr ""
+
+#: src/settings.c:746 src/settings.c:853 src/settings.c:867
+#, c-format
+msgid ""
+"[%s] Warning. invalid size '%s'. Must be an integer >=0. Default to: %d.\n"
+msgstr ""
+
+#: src/wmalhelp.c:44
+msgid "[OPTION] can be :\n"
+msgstr ""
+
+#: src/wmutil.c:816
+msgid "disable tooltip support.\n"
+msgstr ""
+
+#: src/wmutil.c:471
+#, c-format
+msgid "get_color(): Can't parse %s.\n"
+msgstr ""
+
+#: src/wmutil.c:476
+#, c-format
+msgid "get_color(): can't allocate %s.\n"
+msgstr ""
+
+#: src/settings.c:1566
+msgid "print_config() : config is not initialized.\n"
+msgstr ""
+
+#: src/settings.c:659
+msgid "set_config_field(): Internal Error (config==NULL).\n"
+msgstr ""
+
+#: src/settings.c:667
+msgid "set_config_field(): Internal Error. option_id==NULL_OPTION.\n"
+msgstr ""

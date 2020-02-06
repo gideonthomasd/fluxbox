@@ -1,0 +1,254 @@
+# Copyright 2018 Sébastien Ballet. All rights reserved.
+#
+# Use of this source code is governed by the BSD 3-clause license
+# that can be found in the LICENSE file. 
+#
+
+          ### 
+	  #    Global section    #
+	                       ###
+
+  # Note that each attribute in the global section can be redefined in
+  # any application section. 
+  #
+  # Attributes with a # in front of them are commented and are ignored.
+  #
+
+# This attribute define the list of preferred terminal emulators. The
+# 1st available terminal in this list is used to run the command/application
+# when attribute run-in-terminal is set to true (or 1, yes, on). By default,
+# this list is set to @DEFAULT_PREFERRED_TERMINALS@
+#
+# preferred-terminals =
+
+# This allows to re-define the window size. Default to 64 which is the
+# standard size of dockapps.
+#
+# window-size         =
+
+icon-padding              = 4
+border-size               = 2
+background-color          = GhostWhite
+hover-background-color    = GhostWhite
+border-color              = GhostWhite
+hover-border-color        = GhostWhite
+
+# These attributes respectively define the icon search paths, the 
+# destkop file search path, and font search path used by wmalauncher
+# to search for icons, .destkop file and fonts. 
+#
+# By default :
+#   * the icon search paths is set to :
+#
+#      @DEFAULT_ICON_SEARCH_PATH@
+#
+#   * the .desktop file search path is set to:
+#
+#      DEFAULT_DESKTOP_FILE_SEARCH_PATH
+#
+#   * the font search paths is set to :
+#
+#      @DEFAULT_FONT_SEARCH_PATH@
+#
+# icon-search-path          =
+# desktop-file-search-path  =
+# font-search-path          =
+
+
+tooltip-font              = DejaVuSans-Bold/10
+tooltip-background-color  = White
+tooltip-foreground-color  = Black
+tooltip-border-size       = 1
+tooltip-text-padding      = 4
+tooltip-show-delay        = 500
+tooltip-hide-delay        = 10000
+
+icon-grayscale            = off
+hover-icon-grayscale      = off
+
+icon-brightness           = 0.0
+hover-icon-brightness     = 0.25
+
+icon-contrast             = 1.0
+hover-icon-contrast       = 1.0
+
+icon-gamma                = 1.0
+hover-icon-gamma          = 1.0
+
+# This attribute defines whether or not wmalauncher must terminate
+# on right-click. Can be set to 1,yes,on,true,0,no,off (default),false.
+#
+exit-on-right-click       = off
+
+          ####
+          #    Development    #
+                            ###
+			    
+gvim.desktop-file  = gvim.desktop
+
+emacs.desktop-file = emacs.desktop
+
+geany.desktop-file = geany.desktop
+
+          ####
+          #    Games    #
+		      ###
+			    
+darkplaces.desktop-file = darkplaces.desktop
+
+dhewm3.desktop-file = dhewm3.desktop
+
+gzdoom.desktop-file = gzdoom.desktop
+
+ioquake3.desktop-file = ioquake3.desktop
+
+iortcw.desktop-file = iortcw.desktop
+
+quake2.desktop-file = quake2.desktop
+
+xboard.desktop-file = xboard.desktop
+
+          ####
+          #    Graphics    #
+		         ###
+
+geeqie.desktop-file = geeqie.desktop
+
+gimp.desktop-file = gimp.desktop
+
+gwenview.desktop-file = gwenview.desktop
+
+krita.desktop-file = krita.desktop
+
+libreoffice-draw.desktop-file = libreoffice-draw.desktop:libreoffice6.0-draw.desktop
+
+xsane.desktop-file = xsane.desktop
+
+          ####
+          #    Internet    #
+		         ###
+
+# The .desktop files for firefox & thunderbird are
+# respectively named mozilla-firefox.desktop and 
+# mozilla-tunderbird.desktop on Slackware, while it
+# is firefox.desktop (or firefox-esr.desktop) and 
+# thunderbird.desktop on most other *nix flavors. 
+#
+mozilla-firefox.desktop-file     = mozilla-firefox.desktop:firefox.desktop:firefox-esr.desktop
+mozilla-thunderbird.desktop-file = mozilla-thunderbird.desktop:thunderbird.desktop
+
+google-chrome.desktop-file = google-chrome.desktop
+
+seamonkey.desktop-file = seamonkey.desktop
+
+pan.desktop-file = pan.desktop
+
+pidgin.desktop-file = pidgin.desktop
+
+transmission-gtk.desktop-file = transmission-gtk.desktop
+
+transmission-qt.desktop-file = transmission-qt.desktop
+
+gftp.desktop-file = gftp.desktop
+
+          ####
+          #    Multimedia    #
+		           ###
+			   
+amarok.desktop-file = amarok.desktop
+
+audacious.desktop-file = audacious.desktop
+
+kplayer.desktop-file = kplayer.desktop
+
+mplayer.desktop-file = mplayer.desktop
+
+xine.desktop-file = xine.desktop
+
+xmms.desktop-file = xmms.desktop
+
+pavucontrol.desktop-file = pavucontrol.desktop
+
+k3b.desktop-file = k3b.desktop
+
+          ####
+          #    Office    #
+		       ###
+
+
+libreoffice-base.desktop-file = libreoffice-base.desktop:libreoffice6.0-base.desktop
+
+libreoffice-calc.desktop-file = libreoffice-calc.desktop:libreoffice6.0-calc.desktop
+
+libreoffice-impress.desktop-file = libreoffice-impress.desktop:libreoffice6.0-impress.desktop
+
+libreoffice-math.desktop-file = libreoffice-math.desktop:libreoffice6.0-math.desktop
+
+libreoffice-startcenter.desktop-file = libreoffice-startcenter.desktop:libreoffice6.0-startcenter.desktop
+
+libreoffice-writer.desktop-file = libreoffice-writer.desktop:libreoffice6.0-writer.desktop
+
+qpdfview.desktop-file = qpdfview.desktop
+
+okular.desktop-file = okular.desktop
+
+scribus.desktop-file = scribus.desktop
+
+xpdf.desktop-file = xpdf.desktop
+
+          ####
+          #    System    #
+		       ###
+
+
+dolphin.desktop-file = dolphin.desktop
+
+thunar.desktop-file = Thunar.desktop:thunar.desktop
+
+xfe.desktop-file = xfe.desktop
+
+xfce4-terminal.desktop-file = xfce4-terminal.desktop
+
+# The .desktop file for uxterm is uxterm.desktop for most 
+# linux flavors but debian-uxterm.desktop on debian and
+# derivatives.
+#
+uxterm.desktop-file = uxterm.desktop:debian-uxterm.desktop
+
+konsole.desktop-file = konsole.desktop
+
+# The .desktop file for xterm is xterm.desktop for most 
+# linux flavors but debian-xterm.desktop on debian and
+# derivatives.
+#
+xterm.desktop-file = xterm.desktop:debian-xterm.desktop
+
+virtualbox.desktop-file = virtualbox.desktop
+
+htop.desktop-file = htop.desktop
+
+ksysguard.desktop-file = ksysguard.desktop
+
+xfce4-taskmanager.desktop-file = xfce4-taskmanager.desktop
+
+grsync.desktop-file = grsync.desktop
+
+          ####
+          #    Utilities    #
+		          ###
+		       
+leafpad.desktop-file = leafpad.desktop
+
+kate.desktop-file = kate.desktop
+
+kwrite.desktop-file = kwrite.desktop
+
+gucharmap.desktop-file = gucharmap.desktop
+
+xarchiver.desktop-file = xarchiver.desktop
+
+xfce4-screenshooter.desktop-file = xfce4-screenshooter.desktop
+
+galculator.desktop-file = galculator.desktop
+
+kcalc.desktop-file = kcalc.desktop

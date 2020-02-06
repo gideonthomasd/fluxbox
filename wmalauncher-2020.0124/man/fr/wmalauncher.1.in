@@ -1,0 +1,632 @@
+.\" 
+.\" Page de manuel pour wmalauncher 2020.0124
+.\" 
+
+
+.TH WMALAUNCHER 1 "Janvier 2020" "Version 2020.0124"
+.SH NAME
+wmalauncher \- Une application ancrable (dockapp) de type lanceur d'application.
+.SH SYNOPSIS
+\fBwmalauncher\fR \fB--help\fR
+.br
+\fBwmalauncher\fR \fB--fonts-info\fR [<\fIPATH\fR>[:<\fIPATH\fR>...]]
+.br
+\fBwmalauncher\fR \fB--config\fR <\fIFILE\fR> [--prefix <\fIPREFIX\fR>] [OPTION]...
+.br
+\fBwmalauncher\fR \fB--command\fR <\fICMD\fR> \fB--icon\fR <\fIICON\fR> [OPTION]...
+.br
+\fBwmalauncher\fR \fB--desktop-file\fR <\fIFILE\fR>[:<\fIFILE\fR>...] [OPTION]...
+
+[OPTION] peut être :
+
+  [\fB--run-in-terminal\fR] [\fB--preferred-terminals\fR <\fITERM\fR>[:<\fITERM\fR>...]]
+  [\fB--window-size\fR <\fISIZE\fR>] [\fB--icon-padding\fR <\fISIZE\fR>] [\fB--border-size\fR <\fISIZE\fR>]
+  [\fB--background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] [\fB--hover-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>]
+  [\fB--border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] [\fB--hover-border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>]
+  [\fB--icon-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--desktop-file-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--font-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]]
+  [\fB--tooltip-text <\fITEXT\fR>] [\fB--tooltip-font\fR <\fIFONT\fR/\fISIZE\fR>]
+  [\fB--tooltip-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>] 
+  [\fB--tooltip-foreground-color\fR <\fICOLOR\fR>]
+  [\fB--tooltip-border-size\fR <\fISIZE\fR>] [\fB--tooltip-text-padding\fR <\fISIZE\fR>]
+  [\fB--tooltip-show-delay\fR <\fIDELAY\fR>] [\fB--tooltip-hide-delay\fR <\fIDELAY\fR>]
+  [\fB--icon-grayscale\fR] [\fB--hover-icon-grayscale\fR]
+  [\fB--frame\fR <\fIHICOLOR\fR>/<\fIHOVER_HICOLOR\fR>:<\fILOCOLOR\fR>/<\fIHOVER_LOCOLOR\R>[:\fISIZE\fR]]
+  [\fB--icon-brightness\fR <\fIVALUE\fR>] [\fB--hover-icon-brightness\fR <\fIVALUE\fR>]
+  [\fB--icon-contrast\fR <\fIVALUE\fR>] [\fB--hover-icon-contrast\fR <\fIVALUE\fR>]
+  [\fB--icon-gamma\fR <\fIVALUE\fR>] [\fB--hover-icon-gamma\fR <\fIVALUE\fR>]
+  [\fB--double-click\fR [<\fIDELAY\fR>]] [\fB--display\fR <\fINAME\fR>] [\fB--broken-wm\fR]
+  [\fB--exit-on-right-click\fR]
+
+.SH DESCRIPTION
+\fBwmalauncher\fR est un lanceur d'application simple d'utilisation et
+hautement configurable spécialement conçu pour fluxbox mais qui fonctionne
+aussi parfaitement bien sous blackbox, openbox, windowmaker.
+
+\fBwmalauncher\fR supporte les icônes \fIXPM\fR, \fIPNG\fR, \fISVG\fR icons, 
+les fichiers \fI.desktop\fR, les polices true-type (pour le texte de l'infon-bulle), 
+permet, entre autre, de configurer la luminosité, le contraste et la correction 
+gamma des icônes, de tracer un cadre autour de l'icône, etc...
+
+.SH OPTION
+
+.TP
+\fB-h\fR|\fB--help\fR
+.RS
+Affiche la page d'aide.
+.RE
+.HP
+
+.TP
+\fB-f\fR|\fB--fonts-info\fR [<\fIPATH\fR>[:<\fIPATH\fR>...]]
+.RS
+Affiche des informations sur les polices supportées par défaut, et, le 
+cas échéant, concernant les polices accessibles à partir du/des chemin(s)
+spécifiés en arguments.
+.RE
+.HP
+
+.TP
+\fB-C\fR|\fB--config\fR <\fIFILE\fR> [\fB-p\fR|\fB--prefix\fR <\fIPREFIX\fR>]
+.RS
+Charge la configuration à partir du fichier <\fIFILE\fR>, puis, met à jour
+les paramètres pour lesquels il y a des entrées avec le préfixe <\fIPREFIX\fR>.
+
+Voir la section \fBFICHIER DE CONFIGURATION\fR pour plus d'informations à
+ce propos.
+.RE
+.HP
+
+.TP
+\fB-c\fR|\fB--command\fR <\fICMD\fR> \fB-i\fR|\fB--icon\fR <\fIICON\fR>
+.RS
+Définit <\fICMD\fR> comme étant la commande à exécuter, et, <\fIICON\fR> comme
+étant l'icône à afficher.
+
+<\fIICON\fR> peut être un chemin de fichier absolu, ou, un simple nom (avec
+ou sans extension) auquel cas \fBwmalauncher\fR utilisera le premier icône
+correspondant à <\fIICON\fR> trouvé dans les "chemins de recherche d'icônes".
+
+Voir l'option \fB--icon-search-path\fR pour plus d'informations concernant
+les "chemins de recherche d'icônes".
+
+.RE
+.RH
+
+.TP
+\fB-d\fR|\fB--desktop-file\fR <\fIFILE\fR>[:<\fIFILE\fR>...]
+.RS
+Charge le premier fichier \fI.desktop\fR correspondant à n'importe
+lequel des chemins/nom spécifiés en arguments, puis, configure, en
+conséquence, la commande à exécuter, l'icône à afficher, et le texte 
+d'info-bulle.
+
+
+<\fIFILE\fR> peut être un chemin de fichier absolu, ou, un simple nom (avec
+ou sans extension) auquel cas \fBwmalauncher\fR utilisera le premier fichier .desktop correspondant 
+à <\fIFILE\fR> trouvé dans les "chemins de recherche de fichiers .desktop".
+
+Voir l'option \fB--desktop-file-search-path\fR pour plus d'informations concernant
+les "chemins de recherche de fichiers .desktop".
+
+.RE
+.RH
+
+.TP
+\fB-T\fR|\fB--run-in-terminal\fR
+.RS
+Active l'exécution de la commande/appliacation dans une fenêtre de 
+terminal (voir l'option \fB--preferred-terminals\fR).
+.RE
+.RH
+
+
+.TP
+\fB-P\fR|\fB--preferred-terminals\fR <\fITERM\fR>[:<\fITERM\fR>...]
+.RS
+Définit la liste des terminaux préférés. Le premier des terminaux de cette
+liste qui est présent sur le système est utilisé pour exécuter la commande/application
+lorsque (1) l'option \fB--run-in-terminal\fR est passée en argument, (2) le fichier .desktop 
+passé en argument de l'option \fB--desktop-file\fR contient une entrée '\fITerminal=true\fR'.
+
+Par défaut, la liste des terminaux préférés est : @DEFAULT_PREFERRED_TERMINALS@
+.RE
+.RH
+
+
+.TP
+\fB-w\fR|\fB--window-size\fR <\fISIZE\fR>
+.RS
+Fixe la taille de la fenêtre à <\fISIZE\fR> x <\fISIZE\fR>. 64 par défaut.
+.RE
+.RH
+
+.TP
+\fB-g\fR|\fB--icon-padding\fR <\fISIZE\fR>
+.RS
+Fixe la marge interieur autour de l'icône à <\fISIZE\fR>. 3 par défaut.
+.RE
+.RH
+
+.TP
+\fB-z\fR|\fB--border-size\fR <\fISIZE\fR>
+.RS
+Fixe la bordure de la fenêtre à <\fISIZE\fR>. 4 par défaut.
+.RE
+.RH
+
+.TP
+\fB-k\fR|\fB--background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Définit la couleur unie <\fICOLOR\fR> ou le dégradé de couleurs
+<\fIGRADIENT\fR> comme couleur d'arrière plan. Par défaut à la couleur 
+unie \fIBlack\fR.
+
+Voir les sections \fBCOULEURS\fR et \fBDÉGRADÉS\fR pour plus d'informations
+concernant les couleurs et dégradés supportées.
+.RE
+.RH
+
+
+.TP
+\fB-K\fR|\fB--hover-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Définit la couleur unie <\fICOLOR\fR> ou le dégradé de couleurs
+<\fIGRADIENT\fR> comme couleur d'arrière plan lors du survol de la 
+souris. Par défaut à la couleur unie \fIBlack\fR.
+
+Voir les sections \fBCOULEURS\fR et \fBDÉGRADÉS\fR pour plus d'informations
+concernant les couleurs et dégradés supportés.
+.RE
+.RH
+
+.TP
+\fB-b\fR|\fB--border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+
+Définit la couleur unie <\fICOLOR\fR> ou le dégradé de couleurs
+<\fIGRADIENT\fR> comme couleur de bordure. Par défaut à la couleur 
+unie \fIWhite\fR.
+
+Voir les sections \fBCOULEURS\fR et \fBDÉGRADÉS\fR pour plus d'informations
+concernant les couleurs et dégradés supportés.
+.RE
+.RH
+
+.TP
+\fB-B\fR|\fB--hover-border-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Définit la couleur unie <\fICOLOR\fR> ou le dégradé de couleurs
+<\fIGRADIENT\fR> comme couleur de bordure lors du survol de la
+souris. Par défaut à la couleur unie \fIBlack\fR.
+
+Voir les sections \fBCOULEURS\fR et \fBDÉGRADÉS\fR pour plus d'informations
+concernant les couleurs et dégradés supportés.
+.RE
+.RH
+
+.TP
+\fB-a\fR|\fB--icon-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Ajoute le(s) chemin(s) spécifié(s) en tête du "chemin de recherche
+des icônes", qui, initialement, inclut les chemins :
+
+  @DEFAULT_ICON_SEARCH_PATH@
+
+Tout chemin passé en argument qui n'est pas absolu est considéré comme
+étant relatif au chemin : @MAIN_ROOT_ICON_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-A\fR|\fB--desktop-file-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Ajoute le(s) chemin(s) spécifié(s) en tête du "chemin de recherche des
+fichiers .desktop", qui, initialement, inclut les chemins :
+
+ @DEFAULT_DESKTOP_FILE_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-n\fR|\fB--font-search-path\fR <\fIPATH\fR>[:<\fIPATH\fR>...]
+.RS
+Ajoute le(s) chemin(s) spécifié(s) en tête du "chemin de recherche de
+polices", qui, initialement, inclut les chemins :
+
+  @DEFAULT_FONT_SEARCH_PATH@
+.RE
+.RH
+
+.TP
+\fB-t\fR|\fB--tooltip-text\fR <\fITEXT\fR>
+.RS
+Définit <\fITEXT\fR> comme étant le texte de l'info-bulle.
+.RE
+.RH
+
+.TP
+\fB-F\fR|\fB--tooltip-font\fR <\fIFONT\fR/\fISIZE\fR>
+.RS
+Sélectionne la police <\fIFONT\fR> en taille <\fISIZE\fR> pour l'info-bulle. "DejaVuSans/11" par défaut.
+.RE
+.RH
+
+.TP
+\fB-o\fR|\fB--tooltip-background-color\fR <\fICOLOR\fR|\fIGRADIENT\fR>
+.RS
+Définit la couleur unie <\fICOLOR\fR> ou le dégradé de couleurs
+<\fIGRADIENT\fR> comme couleur d'arrière plan de l'info-bulle. Par défaut 
+à la couleur unie \fIWhite\fR.
+
+Voir les sections \fBCOULEURS\fR et \fBDÉGRADÉS\fR pour plus d'informations
+concernant les couleurs et dégradés supportés.
+.RE
+.RH
+
+.TP
+\fB-O\fR|\fB--tooltip-foreground-color\fR <\fICOLOR\fR>
+.RS
+Définit <\fICOLOR\fR> comme couleur d'avant plan de l'info-bulle. \fIBlack\fR par défaut.
+
+Voir la section \fBCOULEURS\fR pour plus d'informations concernant les couleurs
+supportées.
+.RE
+.RH
+
+.TP
+\fB-Z\fR|\fB--tooltip-border-size\fR <\fISIZE\fR>
+.RS
+Fixe la bordure de l'info-bulle à <\fISIZE\fR>. 1 par défaut.
+.RE
+.RH
+
+.TP
+\fB-G\fR|\fB--tooltip-text-padding\fR <\fISIZE\fR>
+.RS
+Fixe la marge intérieur autour du texte de l'info-bulle à <\fISIZE\fR>. 3 par défaut.
+.RE
+.RH
+
+.TP
+\fB-l\fR|\fB--tooltip-show-delay\fR <\fIDELAY\fR>
+.RS
+Fixe à <\fIDELAY\fR> millisecondes le delai avant affichage de l'info-bulle. 1000 ms par défaut.
+.RE
+.RH
+
+.TP
+\fB-L\fR|\fB--tooltip-hide-delay\fR <\fIDELAY\fR>
+.RS
+Fixe à <\fIDELAY\fR> millisecondes le delai avant masquage de l'info-bulle. 5000 ms par défaut.
+.RE
+.RH
+
+.TP
+\fB-y\fR|\fB--icon-grayscale\fR
+.RS
+Affiche l'icône en niveaux de gris.
+.RE
+.RH
+
+.TP
+\fB-Y\fR|\fB--hover-icon-grayscale\fR
+.RS
+Affiche l'icône en niveaux de gris lors du survol de la souris.
+.RE
+.RH
+
+.TP
+\fB-E\fR|\fB--frame\fR <\fIHICOLOR\fR>/<\fIHOVER_HICOLOR\fR>:<\fILOCOLOR\fR>/<\fIHOVER_LOCOLOR\fR>[:\fISIZE\fR]
+.RS
+Trace un rectangle d'une épaisseur de <\fISIZE\fR> pixels autour de l'icône. Les bord supérieur et 
+gauche sont peints avec la couleur <\fIHICOLOR\fR>, alors que les bords inférieur et droit sont peints
+avec la couleur <\fILOCOLOR\fR>. Ces couleurs sont remplacées par les couleurs <\fIHOVER_HICOLOR\fR> et
+<\fIHOVER_LOCOLOR\fR> lors du survole de la souris. Les couleurs <\fIHI\fR>/<\fILO\fR> sont permutées 
+lorsque le bouton gauche de la souirs est enfoncé, sauf si l'option \fB-2\fR|\fB--double-click\fR
+est utilisée.
+
+Configuration par défaut: \fIWhite\fR/\fIWhite\fR:\fIBlack\fR/\fIBlack\fR:1
+
+Voir la section \fBCOULEURS\fR pour plus d'informations concernant les couleurs
+supportées.
+
+.RE
+.RH
+
+.TP
+\fB-r\fR|\fB--icon-brightness\fR <\fIVALUE\fR>
+.RS
+Fixe la luminosité de l'iĉone à <\fRVALUE\fR>. 0.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de luminosité.
+.RE
+.RH
+
+.TP
+\fB-R\fR|\fB--hover-icon-brightness\fR <\fIVALUE\fR>
+.RS
+Fixe la luminosité de l'icône lors du survol de la souris à <\fIVALUE\fR>. 0.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de luminosité.
+.RE
+.RH
+
+.TP
+\fB-s\fR|\fB--icon-contrast\fR <\fIVALUE\fR>
+.RS
+Fixe le contraste de l'icône à <\fIVALUE\fR>. 1.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de contraste.
+.RE
+.RH
+
+.TP
+\fB-S\fR|\fB--hover-icon-contrast\fR <\fIVALUE\fR>
+.RS
+Fixe le contraste de l'icône lors du survol de la souris à <\fIVALUE\fR>. 1.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de contraste.
+.RE
+.RH
+
+.TP
+\fB-m\fR|\fB--icon-gamma\fR <\fIVALUE\fR>
+.RS
+Fixe la correction gamma de l'icône à <\fIVALUE\fR>. 1.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de gamma.
+.RE
+.RH
+
+.TP
+\fB-M\fR|\fB--hover-icon-gamma\fR <\fIVALUE\fR>
+.RS
+Fixe la correction gamma de l'icône lors du survol de la souris à <\fIVALUE\fR>. 1.000000 par défaut.
+
+Voir la section \fBICON: LUMINOSITE, CONTRASTE ET GAMMA\fR pour plus
+d'information concernant les valeurs de gamma.
+.RE
+.RH
+
+.TP
+\fB-2\fR|\fB--double-click\fR [<\fIDELAY\fR>]
+.RS
+Active l'option "exécution de la commande par double-clic" et fixe, le
+cas échéant, le délai de double-click à <\fIDELAY\fR> (450 ms par défaut).
+.RE
+.RH
+
+.TP
+\fB-D\fR|\fB--display\fR <\fINAME\fR>
+.RS
+Définit <\fINAME\fR> comme écran du serveur X sur lequel l'application doit s'afficher.
+.RE
+.RH
+
+.TP
+\fB-W\fR|\fB--broken-wm\fR
+.RS
+Active le correctif pour les gestionnaires de fenêtres "à problèmes".
+.RE
+.RH
+
+.TP
+\fB-x\fR|\fB--exit-on-right-click\fR
+.RS
+Termine cette instance de wmalauncher avec un clic droit.
+.RE
+.RH
+
+
+.SH FICHIER DE CONFIGURATION
+Le fichier passé en argument de l'option \fB-C|--config\fR doit être au
+format texte brut avec des entrées au format :
+
+  [prefix.]key=value
+
+Les lignes en commentaires, c-a-d débutant par un # -précédée ou non par
+des espaces-, sont ignorées.
+
+Les espaces avant et après les valeurs sont automatiquement supprimés.
+
+Lorsqu'il y a plus d'une occurence d'une entrée \fB[prefix.]key\fR, seule
+la première valeur est chargée. Toutes les autres sont ignorées.
+
+\fBkey\fR peut être le nom, sans les tirets, de n'importe laquelle des
+options supportées, à l'exception de : \fIhelp\fR, \fIfonts-info\fR, \fIdisplay\fR, 
+and, \fIbroken-wm\fR :
+
+.RS
+.TS
+allbox ;
+l l.
+Clé	Type
+\fBcommand\fR	Chaîne de caractères
+\fBicon\fR	Chaîne de caractères
+\fBdesktop-file\fR	Chaîne de caractères
+\fBrun-in-terminal\fR	Booléen (1)
+\fBpreferred-terminals\fR	Chaîne de caractères
+\fBwindow-size\fR	Entier
+\fBicon-padding\fR	Entier
+\fBborder-size\fR	Entier
+\fBbackground-color\fR	Chaîne de caractères (2,3)
+\fBhover-background-color\fR	Chaîne de caractères (2,3)
+\fBborder-color\fR	Chaîne de caractères (2,3)
+\fBhover-border-color\fR	Chaîne de caractères (2,3)
+\fBicon-search-path\fR	Chaîne de caractères
+\fBdesktop-file-search-path\fR	Chaîne de caractères
+\fBfont-search-path\fR	Chaîne de caractères
+\fBtooltip-text\fR	Chaîne de caractères
+\fBtooltip-font\fR	Chaîne de caractères
+\fBtooltip-background-color\fR	Chaîne de caractères (2,3)
+\fBtooltip-foreground-color\fR	Chaîne de caractères (2)
+\fBtooltip-border-size\fR	Entier
+\fBtooltip-text-padding\fR	Entier
+\fBtooltip-show-delay\fR	Entier
+\fBtooltip-hide-delay\fR	Entier
+\fBicon-grayscale\fR	Booléen (1)
+\fBhover-icon-grayscale\fR	Booléen (1)
+\fBframe\fR	Chaîne de caractères
+\fBicon-brightness\fR	Flottant
+\fBhover-icon-brightness\fR	Flottant
+\fBicon-contrast\fR	Flottant
+\fBhover-icon-contrast\fR	Flottant
+\fBicon-gamma\fR	Flottant
+\fBhover-icon-gamma\fR	Flottant
+\fBdouble-click\fR	Entier
+\fBexit-on-right-click\fR	Boolean (1)
+.TE
+.RE
+
+(1) Les valeurs booléenne autorisées sont: 1, true, on, yes, 0, false, off, no.
+
+(2) Voir la section \fBCOULEURS\fR pour plus d'informations concernant les couleurs
+supportées.
+
+(3) Voir la section \fBDÉGRADÉS\fR pour plus d'informations concernant les 
+dégradés supportés.
+
+
+\fBprefix\fR peut être n'importe quelle chaîne de caractères.
+
+Lors de l'exécution de la commande '\fBwmalauncher --config F --prefix P\fR', la
+valeur des clés non préfixées trouvées dans \fBF\fR sont chargées en premier, puis 
+la valeur des clés ayant \fBP\fR pour préfixe. Cela permet la mise en oeuvre de
+fichiers de configuration avec une section global pour les paramètres visuels, et
+des sections "préfixées" pour les applications. Exemple :
+  
+  # Paramètres visuels (Section globale)
+  #
+  window-size            = 72
+  icon-padding           = 8
+  border-size            = 4
+  background-color       = Azure
+  hover-background-color = Azure
+  border-color           = Dodger Blue
+  hover-border-color     = Deep Sky Blue
+  icon-grayscale         = on
+  hover-icon-grayscale   = off
+  tooltip-show-delay     = 250
+  tooltip-hide-delay     = 30000
+  hover-icon-brightness  = 0.25
+  
+  # Section dédiée à l'application firefox (prefix=firefox)
+  #
+  firefox.desktop-file   = mozilla-firefox.desktop
+
+  # Section dédiée à l'application thunderbird (prefix=thunderbird)
+  #
+  thunderbird.desktop-file  = mozilla-thunderbird.desktop
+  
+  # Section dédiée à l'application htop (prefix=htop)
+  #
+  # Cette section ne fait pas usage du fichier .desktop afin
+  # d'illustrer comment configurer manuellement wmalauncher 
+  # dans le cas d'une application devant être exécuté dans une
+  # fenêtre de terminal.
+  #
+  htop.command             = /usr/bin/htop
+  htop.icon                = htop
+  htop.run-in-terminal     = true
+  htop.preferred-terminals = /usr/bin/xfce4-terminal:/usr/bin/xterm
+  htop.tooltip-text        = Interactive Process Viewer
+
+Le fichier de configuration ci-dessus peut être utilisé pour démarrer
+3 instances de \fBwmalauncher\fR respectivement dédié à l'exécution
+du navigateur firefox, du client de messagerie thunderbird, et du 
+moniteur système htop. Exemple :
+
+  $ wmalauncher --config F --prefix firefox &
+  $ wmalauncher --config F --prefix thunderbird &
+  $ wmalauncher --config F --prefix htop &
+
+.SH COULEURS
+
+Tout argument de type \fICOLOR\fR peut être un \fInom de couleur X11\fR, 
+ou bien, un triplet-hexadécimal au format \fI#rrggbb\fR.
+
+Pour une liste complète des noms de couleur X11, voir :
+
+    https://en.wikipedia.org/wiki/X11_color_names
+
+.SH DÉGRADÉS
+
+\fBwmalauncher\fR supporte les dégradés entre 2 couleurs (ou plus) de
+type \fIhorizontal\fR, \fIvertical\fR et \fIdiagonal\fR.
+
+Tout dégradé de couleurs doit être spécifié par une chaîne de caractères
+au format :
+
+    <TYPE>:<COLOR_1>,<COLOR_2>[,<COLOR_i> ...]
+    
+<\fITYPE\fR> peut être :
+
+.RS
+\(bu \fBHGRAD\fR : dégradé horizontal de la gauche vers la droite.
+.RE
+
+
+.RS
+\(bu \fBVGRAD\fR : dégradé vertical du haut vers le bas.
+.RE
+
+
+.RS
+\(bu \fBDGRAD\fR : dégradé diagonal du coin supérieur gauche au coin inférieur droit.
+.RE
+
+<\fICOLOR\fR_i> peut être n'importe laquelle des couleurs supportés. Voir
+la section \fBCOULEURS\fR pour plus d'informations à ce sujet.
+
+\fBExemples\fR:
+
+.RS
+\(bu \fIHGRAD:Black,White\fR
+.RS
+Définit un dégradé horizontal entre les couleurs \fIBlack\fR et \fIWhite\fR.
+.RE
+.RE
+
+.RS
+\(bu \fIVGRAD:Black,Red,White\fR
+.RS
+Définit un dégradé vertical entre les couleurs \fIBlack\fR et \fIRed\fR
+puis entre les couleurs \fIRed\fR et \fIWhite\fR.
+.RE
+.RE
+
+.RS
+\(bu \fIDGRAD:Green,Blue\fR
+.RS
+Définit un dégradé en diagonal entre les couleurs \fIGreen\fR et \fIBlue\fR.
+.RE
+.RE
+
+.SH ICON: LUMINOSITE, CONTRASTE ET GAMMA
+
+Tel qu'indiqué dans la documentation Imlib2 :
+
+.RS
+\(bu Une luminosité de 0 est normal. Tout devient noir avec une luminosité
+de -1.0, tout devient blanc avec une luminosité de 1.0. Les valeurs intermédiaires
+font varier la luminosité linéairement. 
+.RE
+
+.RS
+\(bu Un contraste à 1.0 est normal. 0.0 donne du gris, 2.0 double le contraste, etc.
+
+.RE
+
+.RS
+\(bu Un gamma de 1.0 est normal, 2.0 éclaircit et 0.5 assombrit, etc. Les valeurs négatives ne sont pas autorisées.
+.RE
+
+.SH AUTHORS
+Sébastien Ballet <slacker6896@gmail.com>

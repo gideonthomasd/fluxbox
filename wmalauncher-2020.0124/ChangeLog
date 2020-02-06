@@ -1,0 +1,301 @@
++----------------------------------------------------------------------+
+2020/01/24 17:44-UTC
+
+  + Updated thunar entry in frame-onthefly.conf.in (grrr)
+  
++----------------------------------------------------------------------+
+2020/01/24 17:13-UTC
+
+  + Updated thunar entry in wmalauncher configuration files for 
+    compatibility purpose with mxlinux.
+    
++----------------------------------------------------------------------+
+2020/01/24 14:33-UTC
+
+  + Bumped version to 2020.0124
+
+  + Added the option --exit-on-right-click to terminate wmalauncher on
+    right click.
+    
+  + conf/*.conf.in
+    Set attribute 'exit-on-right-click' to 'off'.
+    
+  + man/wmalauncher.1.in, man/fr/wmalauncher.1.in
+    Documented the option --exit-on-right-click, and added exit-on-right-click
+    in the list of supported attributes in configuration files.
+    
+  + po/wmalauncher.pot, po/fr.po
+    Updated.
+    
+  + src/cmdparser.c, src/settings.h, src/settings.c, src/wmalhelp.c,
+    src/wmalauncher.c
+    
+    Added support for option/attribute which allow to terminate wmalauncher
+    on right-click (ie. --exit-on-right-click, and exit-on-right-click)
+    
++----------------------------------------------------------------------+
+
+2018/10/02 15:36-UTC
+
+  + Bumped version to 2018.1002
+  
+  + conf/wmaker-style.conf.in :
+      Added.
+      
+  + CMakeLists.txt :
+      Added generation and installation of wmaker-style.conf from
+      conf/wmaker-style.conf.in
+      
+  + README
+      referenced the configuration wmaker-style.conf.
+
++----------------------------------------------------------------------+
+
+2018/10/02 13:22-UTC
+
+  Added colors gradient support by options --background-color,
+  --hover-background-color, --border-color, hover-border-color,
+  --tooltip-background-color.
+
+  man/wmalauncher.1.in, man/fr/wmalauncher.1.in :
+    + Updated following the addition of colors gradient support.
+  
+  po/wmalauncher.pot, po/fr.po :
+    + Some cleaning
+    + Updated following the addition of colors gradient support.
+  
+  
+  src/cmdparser.c, src/wmalhelp.c :
+    + Updated following the addition of colors gradient support.
+
+  src/wmutil.h, src/wmutil.c:
+    + Added typedef t_color_ex
+    
+    + Added functions :
+       new_color_ex()
+       free_color_ex()
+       imlib_fill_rectangle()
+
+       lerp_rgb()
+       draw_hv_gradient()
+       void draw_diagonal_gradient()
+       
+    + Updated functions :
+       create_tooltip_window()
+       create_tooltip_pixmap()
+
+  src/wmalauncher.c :
+    + Updated functions create_pixmaps() following the addition of
+      colors gradient support.
+
++----------------------------------------------------------------------+
+
+2018/09/21 14:44-UTC
+  README:
+    Cleaned.
+    
++----------------------------------------------------------------------+
+
+2018/09/21 9:44-UTC
+  CMakeList.txt:
+    + Bumped version to 2018.0921
+  
+  gen-update-pot-file.sh:
+    + Bumped version to 2018.0921
+
+  wmalauncher.1.in, fr/wmalauncher.1.in:
+    + Bumped version to 2018.0921
+    
+  po/wmalauncher.pot, po/fr.po:
+    + refreshed
+  
+  wmalauncher.c :
+    + removed useless comment.
+    
++----------------------------------------------------------------------+
+
+2018/09/20 15:19-UTC
+  CMakeLists.txt:
+    + Bumped version to 2018.0920.1
+    
+  wmutil.c:
+    + open_dockapp_windows()
+      class_hint.resname was wrongly set to 'dockapp' instead of 
+      appname. The consequence was simply that wmalauncher instances
+      was not to their respective place in fluxbox slit upon restarts
+      when another kinds of dockapp are present in the slit.
+
++----------------------------------------------------------------------+
+
+2018/09/20 9:24-UTC
+  CMakeLists.txt:
+    Bumped version to 2018.0920.
+    
+  README :
+    Updated the note on how to build wmalauncher on FreeBSD.
+
++----------------------------------------------------------------------+
+
+2018/09/19 18:53-UTC
+  fileutil.c:
+    search_file_ext() wrongly given precedence to the (specified) 
+    extensions over the paths. This has been fixed and now this
+    function gives precedence to the (specified) paths over the
+    extensions. 
+    
+    That is, if pathlist=p1:p2:p3 and ext=e1:e2:e3, search_file_ext() 
+    returns the 1st file in p1 that matches basename+{e1|e2|e3}, 
+    otherwise the 1st file in p2 that matches basename+{e1|e2|e3}, 
+    otherwise, the 1st file in p3 that matches basename+{e1|e2|e3}, 
+    otherwise NULL.
+
++----------------------------------------------------------------------+
+
+2018/09/19 15:54-UTC
+  CMakeLists.txt:
+    + Added the following paths to the default value of variable
+      DEFAULT_FONT_SEARCH_PATH to ensure that DejaVu and Liberation
+      fonts are accessible on systems like FreeBSD or CentOS when
+      installed :
+      
+        ${SYSRES_ROOTDIR}/fonts/dejavu
+	${SYSRES_ROOTDIR}/fonts/liberation
+  
+  README:
+    + Updated following the changes to CMakeLists.txt.
+
++----------------------------------------------------------------------+
+
+2018/09/19 14:43-UTC
+  CMakeLists.txt:
+    + Added the variables SYSRES_ROOTDIR and SYSBIN_DIR which respectively
+      defines where to find resources like fonts, icons, .desktop files, and
+      binaries.
+      
+      The default value of variables below includes references to the variable 
+      SYSRES_ROOTDIR:
+        DEFAULT_FONT_SEARCH_PATH
+        DEFAULT_ICON_SEARCH_PATH
+        MAIN_ROOT_ICON_SEARCH_PATH
+        DEFAULT_DESKTOP_FILE_SEARCH_PATH
+        
+      The default value of variable DEFAULT_PREFERRED_TERMINALS includes references
+      to the variable SYSBIN_DIR.
+      
+      The variables SYSRES_ROOTDIR and SYSBIN_DIR have been introduced to
+      ease build of wmalauncher on FreeBSD.
+
+  README :
+    + Updated following addition of SYSRES_ROOTDIR and SYSBIN_DIR variables
+    in CMakeLists.txt
+  
+  conf/*.conf.in :
+    + Added copyright.
+    + Fixed a typo in note about .desktop file for firefox.
+    + Updated the uxterm/xterm entries for these to work on Debian and derivatives.
+  
+  wmutil.c:
+    + set_dockapp_windows_shape()
+      Removed the round corners which render bad on non transparent background.        
+
++----------------------------------------------------------------------+
+
+2018/09/17 18:48-UTC
+  config.h.in:
+    Added WMAL_PREFERRED_ICON_TYPES which define the preferred
+    order of icon types (colon separated list).
+
+    Added DESKTOP_FILE_EXT which define the extension (without
+    dot at start) of .desktop files.
+
+  CMakeLists.txt:
+    + Added variable DEFAULT_PREFERRED_ICON_TYPES to control the
+      value of WMAL_PREFERRED_ICON_TYPES which is defined in
+      config.h.in. Default to svgz:svg:png:xpm
+
+    + Added a section at the script which prints the project settings.
+
+  cmdparser.c:
+    + parse_command_line() :
+       Instead of being hard-coded, the extension of .desktop files is
+       specified using DESKTOP_FILE_EXT (defined in config.h.in)
+
+  wmalauncher.c:
+    + create_pixmaps()
+       Instead of being hard-coded, the preferred icon types are specified
+       using WMAL_PREFERRED_ICON_TYPES (defined in config.h.in)
+
+  README:
+    + Added a note about the default precedence order of icon types, and about
+      the variable which allows to redefine it (ie. DEFAULT_PREFERRED_ICON_TYPES)
+
++----------------------------------------------------------------------+
+
+2018/09/17 14:05-UTC
+  fileutil.h/.c:
+    
+    + ends_with_extension(), is_filename_equals_to()
+        Superseded the arguments 'char *ext[]' and 'int count', by
+	'char *ext'. this argument can be a simple extension (ex:jpg), 
+	or a colon separated list of extensions (ex:svg:jpg:png).
+        
+    + replaced function find_file() by find_files()
+        find_files() can return more than one pathname and uses a 
+	dichotomic search algorithm to speed up file search. Note 
+	that find_files() does not follow any symlink to directories
+	to prevent possible infinite loop cases. In fact, find_files() 
+	works as command find when used without the -L option. support
+	of following symlink to directories could be implemented in a
+	future release.        
+
+    + removed type f_matching_file following replacement of find_file()
+	
+    + search_file()
+      full rewrite following replacement of find_file() by find_files()
+      
+    + added function search_file_ext()
+    
+  fileutil.c:
+    + removed (obsolete) function dot_dir_filter()
+    + removed (obsolete) function file_with_ext_filter()
+    
+  cmdparser.c:
+    + modified parse_command_line() following changes done to search_file()
+      and addition of search_file_ext() in fileutil.h
+    
+  wmalauncher.c:
+    + removed static variables IMGEXT and IMGEXT_COUNT.
+
++----------------------------------------------------------------------+
+
+2018/09/13 18:12-UTC
+  README: Fixed a typo.
+
+  conf/*: Updated entry mozilla-thunderbird to ensure it works in case
+          the installed .desktop file is named thunderbird.desktop.
+
++----------------------------------------------------------------------+
+
+2018/09/13 15:35-UTC
+  CMakeList.txt: 
+    * Removed installation of obsolete files README.md,
+      README.html and images/header.png.
+
+    * Added installation of file README.
+
++----------------------------------------------------------------------+
+
+2018/09/13 15:35-UTC
+  Removed obsolete directory './images'.
+
++----------------------------------------------------------------------+
+
+2018/09/13 15:33-UTC
+  ./README: Fixed a typo.
+
++----------------------------------------------------------------------+
+
+2018/09/13 15:23-UTC
+  Initial commit.
+
++----------------------------------------------------------------------+

@@ -1,0 +1,149 @@
+/* Copyright 2018 Sébastien Ballet. All rights reserved.
+ * 
+ * Use of this source code is governed by the BSD 3-clause license
+ * that can be found in the LICENSE file. 
+ */
+
+/*
+ * wmalauncher version number.
+ */
+#define WMAL_VERSION "@WMAL_VERSION@"
+
+/* wmalauncher copyright.
+ */
+#define WMAL_COPYRIGHT "@WMAL_COPYRIGHT@" 
+
+/*
+ * Path to the directory hierarchy from which translation files
+ * are accessible.
+ */
+#define WMAL_LOCALE_PATH "@MAKE_INSTALL_DESTDIR@@CMAKE_INSTALL_FULL_DATADIR@/locale"
+
+
+/* The default fonts search path list.
+ */
+#define WMAL_FONT_SEARCH_PATH "@DEFAULT_FONT_SEARCH_PATH@"
+
+/* The default icons search path list.
+ */
+#define WMAL_ICON_SEARCH_PATH "@DEFAULT_ICON_SEARCH_PATH@"
+
+/* The (main) root path to use to resolve any relative path passed
+ * in argument of option --icon-search-path.
+ */
+#define WMAL_MAIN_ROOT_ICON_SEARCH_PATH "@MAIN_ROOT_ICON_SEARCH_PATH@"
+
+/* The precedence order of icon types (colon separated list). 
+ * 
+ * This list is used to select the (best) icon when the icon name 
+ * specified in arguments (or defined in a .desktop  file) is a 
+ * simple name without an extension.
+ */
+#define WMAL_PREFERRED_ICON_TYPES "@DEFAULT_PREFERRED_ICON_TYPES@"
+
+/* The desktop files search path list.
+ */
+#define WMAL_DESKTOP_FILE_SEARCH_PATH "@DEFAULT_DESKTOP_FILE_SEARCH_PATH@"
+
+/* The fallback fonts (colon separated list) to try when a given
+ * font does not exist. Each font in this list must be to the
+ * format: <fontname>/<fontsize>
+ */
+#define WMAL_FALLBACK_FONTS "@DEFAULT_FALLBACK_FONTS@"
+
+/* The (default) list of terminals, in preference order, to use 
+ * when a command/application must be run in a terminal window.
+ */
+#define WMAL_PREFERRED_TERMINALS "@DEFAULT_PREFERRED_TERMINALS@"
+
+/* Extension of .desktop files.
+ */
+#define DESKTOP_FILE_EXT "desktop"
+
+/* The minimum, maximum and default window size.
+ */
+#define MIN_WIN_SIZE      24
+#define MAX_WIN_SIZE     256
+#define DEFAULT_WIN_SIZE  64
+
+/* The default window's background color and the default
+ * window's background color on mouse hovers.
+ */
+#define DEFAULT_BACKGROUND_COLOR       "Black"
+#define DEFAULT_HOVER_BACKGROUND_COLOR "Black"
+
+/* The default window's border size, the default border 
+ * color, and the default border color on mouse hovers.
+ */ 
+#define DEFAULT_BORDER_SIZE        4
+#define DEFAULT_BORDER_COLOR       "White"
+#define DEFAULT_HOVER_BORDER_COLOR "White"
+
+/* The minimu icon size.
+ */
+#define MIN_ICON_SIZE 16
+
+/* The default padding size around the icon.
+ */
+#define DEFAULT_ICON_PADDING 3
+
+/* The minimum icon gamma and minimum icon gamma on mouse hovers.
+ */
+#define MIN_ICON_GAMMA       0.0
+#define MIN_HOVER_ICON_GAMMA 0.0
+
+/* The default icon brightness/contrast/gamma.
+ */
+#define DEFAULT_ICON_BRIGHTNESS          0.0
+#define DEFAULT_ICON_CONTRAST            1.0
+#define DEFAULT_ICON_GAMMA               1.0
+
+/* The default icon brightness/contrast/gamma on mouse hovers.
+ */
+#define DEFAULT_HOVER_ICON_BRIGHTNESS    0.0
+#define DEFAULT_HOVER_ICON_CONTRAST      1.0
+#define DEFAULT_HOVER_ICON_GAMMA         1.0
+
+/* The defaults (high color, low color and thichkness) 
+ * of frame (effect).
+ */
+#define DEFAULT_FRAME_HICOLOR         "White"
+#define DEFAULT_FRAME_HOVER_HICOLOR   "White"
+#define DEFAULT_FRAME_LOCOLOR         "Black"
+#define DEFAULT_FRAME_HOVER_LOCOLOR   "Black"
+#define DEFAULT_FRAME_THICKNESS       1
+
+
+/* The minimum/maximum tooltip show/hide delays.
+ */
+#define MIN_TOOLTIP_SHOW_DELAY 50
+#define MAX_TOOLTIP_SHOW_DELAY 5000
+#define MIN_TOOLTIP_HIDE_DELAY 500
+#define MAX_TOOLTIP_HIDE_DELAY 120000
+ 
+/* The default tooltip :
+ *    + background/foreground colors
+ *    + text font (and size)
+ *    + border size
+ *    + size of padding around the text
+ *    + show/hide delay (in ms)
+ */
+#define DEFAULT_TOOLTIP_BACKGROUND_COLOR "White"
+#define DEFAULT_TOOLTIP_FOREGROUND_COLOR "Black"
+#define DEFAULT_TOOLTIP_FONT             "DejaVuSans/11"
+#define DEFAULT_TOOLTIP_BORDER_SIZE      1
+#define DEFAULT_TOOLTIP_TEXT_PADDING     3
+#define DEFAULT_TOOLTIP_SHOW_DELAY       1000
+#define DEFAULT_TOOLTIP_HIDE_DELAY       5000
+
+/* The minimum, maximum and default double-click timing
+ * delay (in ms).
+ */
+#define MIN_DOUBLE_CLICK_DELAY     200
+#define MAX_DOUBLE_CLICK_DELAY     1000
+#define DEFAULT_DOUBLE_CLICK_DELAY 450
+
+/* The timeout (in ms) used by the main loop when waiting
+ * for events. 
+ */
+#define WAIT_EVENT_TIMEOUT 5000
