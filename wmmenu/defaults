@@ -1,6 +1,6 @@
 #xpmpath	/usr/local/share/WindowMaker/Icons
 #xpmpath /usr/local/share/pixmaps
-xpmpath /home/phil/Downloads
+xpmpath ~/xpm
 ##tile	terminal.xpm
 ##tile	!echo menu.xpm
 
