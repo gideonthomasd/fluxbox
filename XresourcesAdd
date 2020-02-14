@@ -1,3 +1,30 @@
-xterm*faceName:Monospace
-xterm*faceSize: 13
+#xterm*faceName:Monospace
+#xterm*faceSize: 13
+XTerm*loginShell:true
+XTerm*vt100.allowBoldFonts: false
+XTerm*vt100.cursorUnderLine: true
+XTerm*vt100.cursorColor: #00ff00
+XTerm*vt100.cursorBlink: true
+XTerm*vt100.faceName: mono:bold:size=10
+XTerm*vt100.scrollBar: false
+
+XTerm*vt100.foreground: #bfbfbf
+XTerm*vt100.background: #111111
+XTerm*vt100.color0      #000000
+XTerm*vt100.color8:     #808080
+XTerm*vt100.color1:     #705050
+XTerm*vt100.color9:     #dca3a3
+XTerm*vt100.color2:     #60b48a
+XTerm*vt100.color10:    #c3bf9f
+XTerm*vt100.color3:     #dfaf8f
+XTerm*vt100.color11:    #f0dfaf
+XTerm*vt100.color4:     #506070
+XTerm*vt100.color12:    #94bff3
+XTerm*vt100.color5:     #dc8cc3
+XTerm*vt100.color13:    #ec93d3
+XTerm*vt100.color6:             #8cd0d3
+XTerm*vt100.color14:            #93e0e3
+XTerm*vt100.color7:             #dcdccc
+XTerm*vt100.color15:            #eeeeee
+
 
