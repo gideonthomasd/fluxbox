@@ -35,6 +35,7 @@ cp -r myicons6 ~/myicons6
 
 cp XresourcesAdd ~/.Xresources
 cp -r termite ~/.config/termite
+cp -r jgmenu ~/.config/jgmenu
 
 ./createbbdockrc.sh
 sudo cp oblogout.conf /etc/oblogout.conf
