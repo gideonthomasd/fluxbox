@@ -16,4 +16,5 @@ sudo pacman -S adapta-gtk-theme gvfs pdfmixtool xpdf netsurf unzip--noconfirm
 sudo pacman -S virtualbox-guest-utils deadbeef unzip wget jgmenu orage --noconfirm
 sudo systemctl start NetworkManager
 sudo systemctl enable NetworkManager
+sudo pacman -S archlinux-xdg-menu --noconfirm
 #sudo systemctl enable lightdm
