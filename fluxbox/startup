@@ -15,13 +15,13 @@ xmodmap "/home/phil/.Xmodmap"
 # wmsmixer -w &
 # idesk &
 
-xrandr --output Virtual1 --mode 1440x900 &
+xrandr --output Virtual-1 --mode 1440x900 &
 lxpolkit &
 nitrogen --restore &
 #./fehbg.sh &
 volumeicon &
 #plank &
-fbpanel -p abc &
+#fbpanel -p abc &
 nm-applet &
 
 #Slit
