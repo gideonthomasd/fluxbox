@@ -1,7 +1,18 @@
-"menu.xpm"		Menu title
-"firefox.xpm"       firefox &
+"start.xpm"		Menu title
+"menu2.xpm"		~/jgmenu.sh &
+"firefox.xpm"       	firefox &
 "terminal.xpm"		xterm &
-"update.xpm"	pamac-manager &
+"browser.xpm"		netsurf &
+"terminal2.xpm"		termite &
+"update.xpm"		pamac-manager &
+"terminal3.xpm"		lxterminal &
+"calendar.xpm"		orage &
+"taskmanager.xpm"	lxtask &
+"htop.xpm"		xterm htop &
+"custom-icons.xpm"	lxappearance &
+"file.xpm"		pcmanfm &
+"chess.xpm"		scid &
+
 
 
 
