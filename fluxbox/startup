@@ -27,6 +27,8 @@ nm-applet &
 #Slit
 ###wmckgmail & + disown
 #wmmemload &
+
+#wmmenu -m apps &
 bbdock &
 ~/wmtext-3/wmtext -b firebrick -f palegreen ~/wmtext-3/scripts/memory.sh &
 ~/wmtext-3/mail &
