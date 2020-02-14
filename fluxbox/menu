@@ -31,7 +31,7 @@
 		[exec] (⚫ VLC) {vlc}
 		[exec] (⚫ mpv) {mpv --player-operation-mode=pseudo-gui}
     [separator]
-		[include] (/home/phil/.fluxbox/my-menu)
+		[include] (/var/cache/xdg-menu/fluxbox/boxrc)
 	[separator]
      	[exec] (❖ Dosbox) {dosbox} 
      	[exec] (❖ Steam) {steam}    	
