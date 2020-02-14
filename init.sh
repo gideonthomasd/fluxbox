@@ -14,6 +14,6 @@ sudo pacman -S gmrun termite ntfs-3g slock --noconfirm
 sudo pacman -S neofetch rofi gtk2-perl lsb-release --noconfirm
 sudo pacman -S adapta-gtk-theme gvfs pdfmixtool xpdf netsurf --noconfirm
 sudo pacman -S virtualbox-guest-utils deadbeef unzip wget jgmenu orage --noconfirm
-#sudo systemctl start NetworkManager
-#sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
 #sudo systemctl enable lightdm
