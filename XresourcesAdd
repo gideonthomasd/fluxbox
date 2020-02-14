@@ -1,6 +1,6 @@
 ! Base colors
 *.foreground: #c0c5ce
-*.background: #919ba0
+*.background: #000000
 *.cursorColor: #c0c5ce
 
 *.color0: #919ba0
