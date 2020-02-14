@@ -33,6 +33,9 @@ cp -r myicons4 ~/myicons4
 cp -r myicons5 ~/myicons5
 cp -r myicons6 ~/myicons6
 
+cp XresourcesAdd ~/.Xresources
+cp -r termite ~/.config/termite
+
 ./createbbdockrc.sh
 sudo cp oblogout.conf /etc/oblogout.conf
 mv ~/.xprofile ~/.xprofileOLD
