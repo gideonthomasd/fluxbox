@@ -37,6 +37,9 @@ cp XresourcesAdd ~/.Xresources
 cp -r termite ~/.config/termite
 cp -r jgmenu ~/.config/jgmenu
 
+cp -r wmmenu ~/.wmmenu
+cp -r xpm ~/xpm
+
 ./createbbdockrc.sh
 sudo cp oblogout.conf /etc/oblogout.conf
 mv ~/.xprofile ~/.xprofileOLD
