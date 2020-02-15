@@ -42,4 +42,6 @@ cp -r xpm ~/xpm
 
 ./createbbdockrc.sh
 sudo cp oblogout.conf /etc/oblogout.conf
+mkdir ~/.themes
+cp -r themes ~/.themes
 mv ~/.xprofile ~/.xprofileOLD
