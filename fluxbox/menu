@@ -29,6 +29,7 @@
 		[exec] (⚫ Pamac) {pamac-manager}
 		[exec] (⚫ DeadBeef) {deadbeef}
 		[exec] (⚫ VLC) {vlc}
+		[exec] (⚫ Blueberry) {blueberry}
 		[exec] (⚫ mpv) {mpv --player-operation-mode=pseudo-gui}
     [separator]
 		[include] (/var/cache/xdg-menu/fluxbox/boxrc)
@@ -56,7 +57,7 @@
       			[exec] (○ Screenshot - PNG) {import screenshot.png && display -resize 50% screenshot.png}
       			[exec] (○ Regen Menu) {fluxbox-generate_menu}
 		[end]
-		
+		[exit] (Exit)
       		[exec] (○ Lock screen) {slock}
       		[commanddialog] (○ Fluxbox Command)
       		[reconfig] (○ Reload config)
