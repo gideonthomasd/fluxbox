@@ -12,3 +12,4 @@ yay -S --noconfirm oranchelo-icon-theme
 yay -S --noconfirm wmckgmail
 yay -S --noconfirm bbdock
 yay -S --noconfirm libdockapp
+yay -S --noconfirm wmmenu
