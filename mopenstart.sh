@@ -12,7 +12,7 @@ chmod +x ~/fluxbox/wmtext-3/scripts/date.sh
 chmod +x createbbdockrc.sh
 chmod +x jgmenu.sh
 
-./init.sh
+./mopeninit.sh
 ./getfromyay.sh
 
 mv ~/.fluxbox ~/fluxboxOLD
