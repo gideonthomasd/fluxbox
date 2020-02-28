@@ -2,7 +2,7 @@
 set -e
 
 chmod +x init-arco.sh
-chmod +x getfromyay.sh
+chmod +x getfromyay-arco.sh
 chmod +x printer.sh 
 chmod +x bluetooth.sh
 chmod +x ~/fluxbox/wmtext-3/mail
