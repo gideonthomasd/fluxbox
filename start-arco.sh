@@ -13,7 +13,7 @@ chmod +x createbbdockrc.sh
 chmod +x jgmenu.sh
 
 ./init-arco.sh
-./getfromyay.sh
+./getfromyay-arco.sh
 
 mv ~/.fluxbox ~/fluxboxOLD
 cp -r fluxbox ~/.fluxbox
