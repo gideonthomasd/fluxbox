@@ -8,7 +8,7 @@ sudo pacman -S pcmanfm --noconfirm
 sudo pacman -S networkmanager network-manager-applet --noconfirm
 sudo pacman -S xorg-server xorg xorg-xinit --noconfirm
 sudo pacman -S moka-icon-theme --noconfirm
-sudo pacman -S w3m fluxbox conky volumeicon mpv youtube-dl --noconfirm
+sudo pacman -S w3m fluxbox volumeicon mpv youtube-dl --noconfirm
 sudo pacman -S pavucontrol pulseaudio lxterminal --noconfirm
 sudo pacman -S gmrun termite ntfs-3g slock --noconfirm
 sudo pacman -S neofetch rofi gtk2-perl lsb-release --noconfirm
