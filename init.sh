@@ -17,4 +17,5 @@ sudo pacman -S virtualbox-guest-utils deadbeef unzip wget jgmenu orage --noconfi
 sudo systemctl start NetworkManager
 sudo systemctl enable NetworkManager
 sudo pacman -S archlinux-xdg-menu --noconfirm
+#sudo pacman -S manjaro-xdg-menu --noconfirm
 #sudo systemctl enable lightdm
