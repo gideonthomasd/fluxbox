@@ -6,4 +6,4 @@ sudo pacman -S bluez bluez-utils blueberry
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
-echo "Connect to blueberry.  Connect Marathon or device.  Close dialog"
+echo "Connect to blueberry.  Connect Marathon or device.  Close dialog. REBOOT PC FIRST"
